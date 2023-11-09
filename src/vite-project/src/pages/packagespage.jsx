@@ -1,14 +1,7 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-import voucher from './img/voucher.png'
-import packages from './img/package.png'
+import React from "react";
 
-function App() {
-  const [count, setCount] = useState(0)
-
-  return (
+function PackagesPage() {
+    return (
     <>
       <h1 class="top-2 font-sans text-4xl font-bold py-10">
 		  Voucher Tersedia:
@@ -71,7 +64,7 @@ function App() {
           </div>
        </div>
     </>
-  )
+    );
 }
 
-export default App
+export default PackagesPage;
