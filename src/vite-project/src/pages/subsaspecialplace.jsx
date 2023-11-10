@@ -1,9 +1,11 @@
 import React from "react";
 import travelpic from '../img/purpletravel.jpg'
+import Navbar from '../components/Navbar.jsx'
 
 function SubsSpecialPlace() {
     return (
-        <>
+    <>
+        <Navbar/>
         <h1 class="top-2 font-sans text-4xl font-bold py-10 text-center mb-4">
             Daftar Tempat Spesial Subscriptions:
         </h1>

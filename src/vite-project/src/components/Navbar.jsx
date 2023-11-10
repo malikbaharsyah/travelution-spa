@@ -1,4 +1,5 @@
 import React, {useRef, useEffect, useState} from 'react';
+import { Link } from 'react-router-dom';
 import navbarlogo from '../img/logo2.png'
 
 function Navbar() {
@@ -38,12 +39,12 @@ function Navbar() {
         </div>
         <div className={`md:flex items-center ${isOpen ? 'block' : 'hidden'}`}>
           <div className="md:flex items-center space-x-6 mr-2">
-            <a href="#" className="text-black">Home</a>
-            <a href="#" className="text-black">Voucher</a>
-            <a href="#" className="text-black">Packages</a>
-            <a href="#" className="text-black">Subscriptions</a>
-            <a href="#" className="text-black">Special Place</a>
-            <a href="#" className="text-black">Jason</a>
+            <Link to="/" className="text-black">Home</Link>
+            <Link to="/voucher" className="text-black">Voucher</Link>
+            <Link to="/packages" className="text-black">Packages</Link>
+            <Link to="/subscriptions" className="text-black">Subscriptions</Link>
+            <Link to="/specialplace" className="text-black">Special Place</Link>
+            <a href="" className="text-black">Jason</a>
           </div>
         </div>
       </div>

@@ -1,9 +1,11 @@
 import React from "react";
+import Navbar from '../components/Navbar.jsx'
 
 function SubscriptionsList() {
     return (
         <>
-        <h1 class="top-2 font-sans text-4xl font-bold py-10 text-center mb-4">
+        <Navbar/>
+        <h1 class="top-2 font-sans text-4xl font-bold py-10 text-center mt-5 mb-3">
             Daftar Pengguna Subscriptions:
         </h1>
         <div class="flex justify-center items-center">

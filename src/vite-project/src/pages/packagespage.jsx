@@ -1,13 +1,15 @@
 import React from "react";
 import packages from '../img/package.png'
+import Navbar from '../components/Navbar.jsx'
 
 function PackagesPage() {
     return (
     <>
-      <h1 class="top-2 font-sans text-4xl font-bold py-10">
+      <Navbar/>
+      <h1 class="top-2 font-sans text-4xl font-bold py-10 ml-10">
 		  Voucher Tersedia:
       </h1>
-        <div class="bg-white rounded-xl max-w-screen-2xl p-5 pt-5 mb-6">
+        <div class="bg-white rounded-xl max-w-screen-2xl p-5 pt-5 mb-6 ml-10 mr-10">
           <div class="flex justify-between items-center">
               <div class="flex items-center">
                   <img src={packages} alt="packages" class="w-16 h-16 ml-5 mr-7"/>
@@ -26,7 +28,7 @@ function PackagesPage() {
               </div>
           </div>
        </div>
-       <div class="bg-white rounded-xl max-w-screen-2xl p-5 pt-5 mb-6">
+       <div class="bg-white rounded-xl max-w-screen-2xl p-5 pt-5 mb-6 ml-10 mr-10">
           <div class="flex justify-between items-center">
               <div class="flex items-center">
                   <img src={packages} alt="packages" class="w-16 h-16 ml-5 mr-7"/>
@@ -45,7 +47,7 @@ function PackagesPage() {
               </div>
           </div>
        </div>
-       <div class="bg-white rounded-xl max-w-screen-2xl p-5 pt-5 mb-6">
+       <div class="bg-white rounded-xl max-w-screen-2xl p-5 pt-5 mb-6 ml-10 mr-10">
           <div class="flex justify-between items-center">
               <div class="flex items-center">
                   <img src={packages} alt="packages" class="w-16 h-16 ml-5 mr-7"/>
