@@ -1,13 +1,13 @@
 import React from "react";
-import LandingImage from "../img/seablue.jpg";
+import DashboardImage from "../img/seablue.jpg";
 import Navbar from '../components/Navbar.jsx'
 
-  function LandingPage() {
+  function Dashboard() {
     return (
       <>
         <Navbar/>
         <div className="landingpage">
-          <img src={LandingImage} id='landingimage' alt="landingimage" className="w-full" />
+          <img src={DashboardImage} id='landingimage' alt="landingimage" className="w-full" />
           <div className="titletext absolute top-72 w-full text-center">
             <h1 className="text-5xl md:text-9xl mb-10">TRAVELUTION</h1>
             <p className="text-lg md:text-3xl">"Tentukan Perjalanan Sesuai Keinginanmu"</p>
@@ -25,4 +25,4 @@ import Navbar from '../components/Navbar.jsx'
     );
   }
 
-export default LandingPage;
+export default Dashboard;

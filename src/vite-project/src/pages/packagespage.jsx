@@ -1,6 +1,7 @@
 import React from "react";
 import packages from '../img/package.png'
 import Navbar from '../components/Navbar.jsx'
+import { Link } from 'react-router-dom';
 
 function PackagesPage() {
     const KonfirmasiButton = () => {
@@ -9,6 +10,7 @@ function PackagesPage() {
         if (confirmation) {
         // Masuk database tiketnya
           console.log('User confirmed the action');
+          window.alert('Paket Perjalanan Berhasil dikonfirmasi!');
         } else {
         // Do nothing!
           console.log('User canceled the action');
@@ -31,9 +33,11 @@ function PackagesPage() {
                   </div>
               </div>
               <div class="flex space-x-4">
+                <Link to="/packagesdetail">
                   <button class="voucher-detail-button bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded">
                       Detail
                   </button>
+                </Link>
                   <button class="voucher-detail-button bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded" onClick={KonfirmasiButton}>
                       Konfirmasi
                   </button>
@@ -50,9 +54,11 @@ function PackagesPage() {
                   </div>
               </div>
               <div class="flex space-x-4">
+                <Link to="/packagesdetail">
                   <button class="voucher-detail-button bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded">
                       Detail
                   </button>
+                </Link>
                   <button class="voucher-detail-button bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded" onClick={KonfirmasiButton}>
                       Konfirmasi
                   </button>
@@ -69,9 +75,11 @@ function PackagesPage() {
                   </div>
               </div>
               <div class="flex space-x-4">
+                <Link to="/packagesdetail">
                   <button class="voucher-detail-button bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded">
                       Detail
                   </button>
+                </Link>
                   <button class="voucher-detail-button bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded" onClick={KonfirmasiButton}>
                       Konfirmasi
                   </button>

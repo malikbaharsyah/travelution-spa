@@ -1,6 +1,7 @@
 import React from "react";
 import voucher from '../img/voucher.png'
 import Navbar from '../components/Navbar.jsx'
+import { Link } from 'react-router-dom';
 
 function VoucherPage() {
     const GunakanButton = () => {
@@ -9,6 +10,7 @@ function VoucherPage() {
         if (confirmation) {
         // Masuk database tiketnya
           console.log('User confirmed the action');
+          window.alert('Tiket berhasil digunakan!');
         } else {
         // Do nothing!
           console.log('User canceled the action');
@@ -31,9 +33,11 @@ function VoucherPage() {
                   </div>
               </div>
               <div class="flex space-x-4">
+                <Link to="/voucherdetail">
                   <button class="voucher-detail-button bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded">
                       Detail
                   </button>
+                </Link>
                   <button class="voucher-detail-button bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded" onClick={GunakanButton}>
                       Gunakan
                   </button>
@@ -50,9 +54,11 @@ function VoucherPage() {
                   </div>
               </div>
               <div class="flex space-x-4">
+                <Link to="/voucherdetail">
                   <button class="voucher-detail-button bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded">
                       Detail
                   </button>
+                </Link>
                   <button class="voucher-detail-button bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded" onClick={GunakanButton}>
                       Gunakan
                   </button>
@@ -69,9 +75,11 @@ function VoucherPage() {
                   </div>
               </div>
               <div class="flex space-x-4">
-                  <button class="voucher-detail-button bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded">
+                  <Link to="/voucherdetail">
+                    <button class="voucher-detail-button bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded">
                       Detail
-                  </button>
+                    </button>
+                  </Link>
                   <button class="voucher-detail-button bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded" onClick={GunakanButton}>
                       Gunakan
                   </button>
