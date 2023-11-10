@@ -1,4 +1,5 @@
 import React from "react";
+import packages from '../img/package.png'
 
 function PackagesPage() {
     return (
