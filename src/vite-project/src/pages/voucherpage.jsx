@@ -3,6 +3,18 @@ import voucher from '../img/voucher.png'
 import Navbar from '../components/Navbar.jsx'
 
 function VoucherPage() {
+    const GunakanButton = () => {
+        const confirmation = window.confirm('Yakin mau menggunakan tiket?');
+    
+        if (confirmation) {
+        // Masuk database tiketnya
+          console.log('User confirmed the action');
+        } else {
+        // Do nothing!
+          console.log('User canceled the action');
+        }
+    };
+
     return (
     <>
       <Navbar/>
@@ -19,12 +31,12 @@ function VoucherPage() {
                   </div>
               </div>
               <div class="flex space-x-4">
-                  <div class="voucher-detail-button bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded">
+                  <button class="voucher-detail-button bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded">
                       Detail
-                  </div>
-                  <div class="voucher-detail-button bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded">
+                  </button>
+                  <button class="voucher-detail-button bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded" onClick={GunakanButton}>
                       Gunakan
-                  </div>
+                  </button>
               </div>
           </div>
        </div>
@@ -38,12 +50,12 @@ function VoucherPage() {
                   </div>
               </div>
               <div class="flex space-x-4">
-                  <div class="voucher-detail-button bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded">
+                  <button class="voucher-detail-button bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded">
                       Detail
-                  </div>
-                  <div class="voucher-detail-button bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded">
+                  </button>
+                  <button class="voucher-detail-button bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded" onClick={GunakanButton}>
                       Gunakan
-                  </div>
+                  </button>
               </div>
           </div>
        </div>
@@ -57,12 +69,12 @@ function VoucherPage() {
                   </div>
               </div>
               <div class="flex space-x-4">
-                  <div class="voucher-detail-button bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded">
+                  <button class="voucher-detail-button bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded">
                       Detail
-                  </div>
-                  <div class="voucher-detail-button bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded">
+                  </button>
+                  <button class="voucher-detail-button bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded" onClick={GunakanButton}>
                       Gunakan
-                  </div>
+                  </button>
               </div>
           </div>
        </div>
@@ -76,12 +88,12 @@ function VoucherPage() {
                   </div>
               </div>
               <div class="flex space-x-4">
-                  <div class="voucher-detail-button bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded">
+                  <button class="voucher-detail-button bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded">
                       Detail
-                  </div>
-                  <div class="voucher-detail-button bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded">
+                  </button>
+                  <button class="voucher-detail-button bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded" onClick={GunakanButton}>
                       Gunakan
-                  </div>
+                  </button>
               </div>
           </div>
        </div>
@@ -95,12 +107,12 @@ function VoucherPage() {
                   </div>
               </div>
               <div class="flex space-x-4">
-                  <div class="voucher-detail-button bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded">
+                  <button class="voucher-detail-button bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded">
                       Detail
-                  </div>
-                  <div class="voucher-detail-button bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded">
+                  </button>
+                  <button class="voucher-detail-button bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded" onClick={GunakanButton}>
                       Gunakan
-                  </div>
+                  </button>
               </div>
           </div>
        </div>
