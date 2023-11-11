@@ -11,6 +11,18 @@ function Navbar() {
       setIsDropdownOpen(!isDropdownOpen);
   };
 
+  const LogOutButton = () => {
+    const confirmation = window.confirm('Yakin mau logout?');
+
+    if (confirmation) {
+    // Masuk database tiketnya
+      console.log('User confirmed the action');
+    } else {
+    // Do nothing!
+      console.log('User canceled the action');
+    }
+};
+
   return (
     <nav className="bg-blue-400 p-4">
       <div className="flex items-center justify-between">
@@ -62,7 +74,7 @@ function Navbar() {
                             <Link to="/create-travel-plan" className="block px-4 py-2 text-sm text-black" role="menuitem">
                                 Create Travel Plan
                             </Link>
-                            <Link to="/" className="block px-4 py-2 text-sm text-black" role="menuitem">
+                            <Link to="/" className="block px-4 py-2 text-sm text-black" role="menuitem" onClick={LogOutButton}>
                                   Logout
                             </Link>
                         </div>

@@ -19,7 +19,7 @@ function PackagesDetail() {
     return (
     <>
         <Navbar/>
-        <div class="bg-white rounded-xl max-w-screen-2xl p-10 my-44 mx-40">
+        <div class="bg-white rounded-xl max-w-screen-2xl p-10 mt-40 mx-40">
         <h1 class="font-sans text-5xl font-bold text-black mb-3">
             Package A
         </h1>

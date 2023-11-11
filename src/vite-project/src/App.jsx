@@ -12,6 +12,11 @@ import Subscriptions from './pages/subslist.jsx';
 import SpecialPlace from './pages/subsaspecialplace.jsx';
 import VoucherDetail from './pages/voucherdetail.jsx';
 import PackageDetail from './pages/packagesdetail.jsx';
+import PlaceInfo from './pages/placeinformation.jsx';
+import ChooseTravelPlan from './pages/choosetravelplan.jsx';
+import CreateTravelPlan from './pages/createtravelplan.jsx';
+import TravelPlanInfo from './pages/travelplaninfofill.jsx';
+import AddPlaceFill from './pages/addplacefill.jsx';
 
 function App() {
   const [isOpen, setIsOpen] = useState(false);
@@ -30,6 +35,11 @@ function App() {
           <Route path="/specialplace" element={<SpecialPlace />} />
           <Route path="/voucherdetail" element={<VoucherDetail />} />
           <Route path="/packagesdetail" element={<PackageDetail />} />
+          <Route path="/placeinformation" element={<PlaceInfo />} />
+          <Route path="/select-travel-plan" element={<ChooseTravelPlan />} />
+          <Route path="/create-travel-plan" element={<CreateTravelPlan />} />
+          <Route path="/travel-plan-info-fill" element={<TravelPlanInfo />} />
+          <Route path="/add-place-fill" element={<AddPlaceFill />} />
         </Routes>
       </Router>
     </>
