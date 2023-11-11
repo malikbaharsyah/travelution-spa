@@ -4,19 +4,6 @@ import Navbar from '../components/Navbar.jsx'
 import { Link } from 'react-router-dom';
 
 function ChooseTravelPlan() {
-    const KonfirmasiButton = () => {
-        const confirmation = window.confirm('Yakin mau konfirmasi?');
-    
-        if (confirmation) {
-        // Masuk database tiketnya
-          console.log('User confirmed the action');
-          window.alert('Paket Perjalanan Berhasil dikonfirmasi!');
-        } else {
-        // Do nothing!
-          console.log('User canceled the action');
-        }
-    };
-
     return (
     <>
       <Navbar/>

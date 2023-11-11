@@ -16,11 +16,7 @@ function Navbar() {
     const confirmation = window.confirm('Yakin mau logout?');
 
     if (confirmation) {
-      console.log('User confirmed the action');
       navigate('/')
-    } else {
-    // Do nothing!
-      console.log('User canceled the action');
     }
 };
 

@@ -1,7 +1,21 @@
 import React from "react";
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 function Login() {
+    const navigate = useNavigate();
+
+    const SubmitButton = () => {
+        const username = document.getElementById('username').value;
+        const password = document.getElementById('password').value;
+
+        if (username === '' || password === '') {
+            window.alert('Isi datanya mas/mbak!');
+            return;
+        } else {
+            navigate('/dashboard')
+        }
+    };
+
     return (
         <>
             <div className="flex justify-center text-black mt-28">
@@ -12,17 +26,15 @@ function Login() {
                 <form className="space-y-4">
                     <div className="mt-1">
                         <label className="block text-xl mb-5">Username</label>
-                        <input type="text"className="w-full px-4 py-2 border rounded-md bg-blue-200"/>
+                        <input type="text"className="w-full px-4 py-2 border rounded-md bg-blue-200" id="username"/>
                     </div>
                     <div>
                         <label className="block text-xl mb-5">Password</label>
-                        <input type="password"className="w-full px-4 py-2 border rounded-md bg-blue-200 mb-14"/>
+                        <input type="password"className="w-full px-4 py-2 border rounded-md bg-blue-200 mb-8" id="password"/>
                     </div>
-                    <Link to="/dashboard">
-                        <button type="button" className="w-full bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded">
+                        <button type="button" className="w-full bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded" onClick={SubmitButton}>
                             Login
                         </button>
-                    </Link>
                 </form>
                 <p className="mt-6">
                     Don't have an account?{'  '}

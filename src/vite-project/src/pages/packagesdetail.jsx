@@ -8,11 +8,8 @@ function PackagesDetail() {
         const confirmation = window.confirm('Yakin mau konfirmasi?');
     
         if (confirmation) {
-          console.log('User confirmed the action');
           window.alert('Paket Perjalanan Berhasil dikonfirmasi!');
           navigate('/packages');
-        } else {
-          console.log('User canceled the action');
         }
     };
 

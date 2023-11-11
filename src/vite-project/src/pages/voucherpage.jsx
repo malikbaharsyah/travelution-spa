@@ -8,12 +8,7 @@ function VoucherPage() {
         const confirmation = window.confirm('Yakin mau menggunakan tiket?');
     
         if (confirmation) {
-        // Masuk database tiketnya
-          console.log('User confirmed the action');
           window.alert('Tiket berhasil digunakan!');
-        } else {
-        // Do nothing!
-          console.log('User canceled the action');
         }
     };
 

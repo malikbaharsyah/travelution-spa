@@ -8,12 +8,7 @@ function PackagesPage() {
         const confirmation = window.confirm('Yakin mau konfirmasi?');
     
         if (confirmation) {
-        // Masuk database tiketnya
-          console.log('User confirmed the action');
           window.alert('Paket Perjalanan Berhasil dikonfirmasi!');
-        } else {
-        // Do nothing!
-          console.log('User canceled the action');
         }
     };
 

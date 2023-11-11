@@ -5,16 +5,28 @@ function AddPlaceFill() {
     const navigate = useNavigate();
 
     const SubmitButton = () => {
+        const tanggalKunjungan = document.getElementById('tanggalKunjungan').value;
+        const jumlahPengunjung = document.getElementById('jumlahPengunjung').value;
+        const waktuMulai = document.getElementById('waktuMulai').value;
+        const waktuSelesai = document.getElementById('waktuSelesai').value;
         const confirmation = window.confirm('Yakin mau memasukkan tempat pada travel plan?');
+
+        if (tanggalKunjungan === '' || jumlahPengunjung === '' || waktuMulai === '' || waktuSelesai === '') {
+            window.alert('Isi datanya mas/mbak!');
+            return;
+        }
+
+        if (waktuMulai > waktuSelesai || jumlahPengunjung < 1) {
+            window.alert('Data tidak valid');
+            return;
+        }
     
         if (confirmation) {
-          console.log('User confirmed the action');
           window.alert('Tempat berhasil dimasukkan!');
           navigate('/specialplace');
-        } else {
-          console.log('User canceled the action');
         }
     };
+
     return (
         <>
             <div className="flex justify-center text-black mt-11">
@@ -27,6 +39,7 @@ function AddPlaceFill() {
                             <div className="w-full px-3 mb-6">
                                 <label className="block text-xl mb-2">Tanggal Kunjungan</label>
                                 <input
+                                    id="tanggalKunjungan"
                                     type="date"
                                     className="w-full px-4 py-2 border rounded-md bg-blue-200"
                                 />
@@ -34,6 +47,7 @@ function AddPlaceFill() {
                             <div className="w-full px-3 mb-6">
                                 <label className="block text-xl mb-2">Jumlah Pengunjung</label>
                                 <input
+                                    id="jumlahPengunjung"
                                     type="number"
                                     className="w-full px-4 py-2 border rounded-md bg-blue-200"
                                 />
@@ -41,6 +55,7 @@ function AddPlaceFill() {
                             <div className="w-1/2 px-3 mb-6">
                                 <label className="block text-xl mb-2">Waktu Mulai</label>
                                 <input
+                                    id="waktuMulai"
                                     type="time"
                                     className="w-full px-4 py-2 border rounded-md bg-blue-200 text-xs"
                                 />
@@ -48,6 +63,7 @@ function AddPlaceFill() {
                             <div className="w-1/2 px-3 mb-6">
                                 <label className="block text-xl mb-2">Waktu Selesai</label>
                                 <input
+                                    id="waktuSelesai"
                                     type="time"
                                     className="w-full px-4 py-2 border rounded-md bg-blue-200 text-xs"
                                 />

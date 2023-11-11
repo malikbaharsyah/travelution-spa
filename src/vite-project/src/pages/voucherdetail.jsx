@@ -8,11 +8,8 @@ function VoucherDetail() {
         const confirmation = window.confirm('Yakin mau menggunakan tiket?');
     
         if (confirmation) {
-          console.log('User confirmed the action');
           window.alert('Tiket berhasil digunakan!');
           navigate('/voucher');
-        } else {
-          console.log('User canceled the action');
         }
     };
 
