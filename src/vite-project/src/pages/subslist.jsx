@@ -1,6 +1,66 @@
 import React from "react";
 import Navbar from '../components/Navbar.jsx'
 
+const DataDummy = [
+    {
+        "username": "user1",
+        "firstName": "John",
+        "lastName": "Doe",
+        "start": "2021-01-01",
+        "end": "2021-12-31"
+    },
+    {
+        "username": "user1",
+        "firstName": "John",
+        "lastName": "Doe",
+        "start": "2021-01-01",
+        "end": "2021-12-31"
+    },
+    {
+        "username": "user1",
+        "firstName": "John",
+        "lastName": "Doe",
+        "start": "2021-01-01",
+        "end": "2021-12-31"
+    },
+    {
+        "username": "user1",
+        "firstName": "John",
+        "lastName": "Doe",
+        "start": "2021-01-01",
+        "end": "2021-12-31"
+    },
+    {
+        "username": "user1",
+        "firstName": "John",
+        "lastName": "Doe",
+        "start": "2021-01-01",
+        "end": "2021-12-31"
+    },
+    {
+        "username": "user1",
+        "firstName": "John",
+        "lastName": "Doe",
+        "start": "2021-01-01",
+        "end": "2021-12-31"
+    },
+    {
+        "username": "user1",
+        "firstName": "John",
+        "lastName": "Doe",
+        "start": "2021-01-01",
+        "end": "2021-12-31"
+    },
+    {
+        "username": "user1",
+        "firstName": "John",
+        "lastName": "Doe",
+        "start": "2021-01-01",
+        "end": "2021-12-31"
+    },
+]
+
+
 function SubscriptionsList() {
     return (
         <>
@@ -17,62 +77,17 @@ function SubscriptionsList() {
                   <th class="border-b border-gray-400 text-center p-6 w-52 text-xl">Start</th>
                   <th class="border-b border-gray-400 text-center p-6 w-52 text-xl">End</th>
               </tr>
-              <tr>
-                  <td class="border-b border-gray-400 text-center p-3">user1</td>
-                  <td class="border-b border-gray-400 text-center p-3">John</td>
-                  <td class="border-b border-gray-400 text-center p-3">Doe</td>
-                  <td class="border-b border-gray-400 text-center p-3">2021-01-01</td>
-                  <td class="border-b border-gray-400 text-center p-3">2021-12-31</td>
-              </tr>
-              <tr>
-                  <td class="border-b border-gray-400 text-center p-3">user1</td>
-                  <td class="border-b border-gray-400 text-center p-3">John</td>
-                  <td class="border-b border-gray-400 text-center p-3">Doe</td>
-                  <td class="border-b border-gray-400 text-center p-3">2021-01-01</td>
-                  <td class="border-b border-gray-400 text-center p-3">2021-12-31</td>
-              </tr>
-              <tr>
-                  <td class="border-b border-gray-400 text-center p-3">user1</td>
-                  <td class="border-b border-gray-400 text-center p-3">John</td>
-                  <td class="border-b border-gray-400 text-center p-3">Doe</td>
-                  <td class="border-b border-gray-400 text-center p-3">2021-01-01</td>
-                  <td class="border-b border-gray-400 text-center p-3">2021-12-31</td>
-              </tr>
-              <tr>
-                  <td class="border-b border-gray-400 text-center p-3">user1</td>
-                  <td class="border-b border-gray-400 text-center p-3">John</td>
-                  <td class="border-b border-gray-400 text-center p-3">Doe</td>
-                  <td class="border-b border-gray-400 text-center p-3">2021-01-01</td>
-                  <td class="border-b border-gray-400 text-center p-3">2021-12-31</td>
-              </tr>
-              <tr>
-                  <td class="border-b border-gray-400 text-center p-3">user1</td>
-                  <td class="border-b border-gray-400 text-center p-3">John</td>
-                  <td class="border-b border-gray-400 text-center p-3">Doe</td>
-                  <td class="border-b border-gray-400 text-center p-3">2021-01-01</td>
-                  <td class="border-b border-gray-400 text-center p-3">2021-12-31</td>
-              </tr>
-              <tr>
-                  <td class="border-b border-gray-400 text-center p-3">user1</td>
-                  <td class="border-b border-gray-400 text-center p-3">John</td>
-                  <td class="border-b border-gray-400 text-center p-3">Doe</td>
-                  <td class="border-b border-gray-400 text-center p-3">2021-01-01</td>
-                  <td class="border-b border-gray-400 text-center p-3">2021-12-31</td>
-              </tr>
-              <tr>
-                  <td class="border-b border-gray-400 text-center p-3">user1</td>
-                  <td class="border-b border-gray-400 text-center p-3">John</td>
-                  <td class="border-b border-gray-400 text-center p-3">Doe</td>
-                  <td class="border-b border-gray-400 text-center p-3">2021-01-01</td>
-                  <td class="border-b border-gray-400 text-center p-3">2021-12-31</td>
-              </tr>
-              <tr>
-                  <td class="border-b border-gray-400 text-center p-3">user1</td>
-                  <td class="border-b border-gray-400 text-center p-3">John</td>
-                  <td class="border-b border-gray-400 text-center p-3">Doe</td>
-                  <td class="border-b border-gray-400 text-center p-3">2021-01-01</td>
-                  <td class="border-b border-gray-400 text-center p-3">2021-12-31</td>
-              </tr>
+              {DataDummy.map((item) => {
+                return (
+                    <tr>
+                        <td class="border-b border-gray-400 text-center p-3">{item.username}</td>
+                        <td class="border-b border-gray-400 text-center p-3">{item.firstName}</td>
+                        <td class="border-b border-gray-400 text-center p-3">{item.lastName}</td>
+                        <td class="border-b border-gray-400 text-center p-3">{item.start}</td>
+                        <td class="border-b border-gray-400 text-center p-3">{item.end}</td>
+                    </tr>
+                )
+            })}
           </table>
         </div>
       </>
