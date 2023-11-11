@@ -1,16 +1,17 @@
 import React from "react";
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 function AddPlaceFill() {
+    const navigate = useNavigate();
+
     const SubmitButton = () => {
         const confirmation = window.confirm('Yakin mau memasukkan tempat pada travel plan?');
     
         if (confirmation) {
-        // Masuk database tiketnya
           console.log('User confirmed the action');
           window.alert('Tempat berhasil dimasukkan!');
+          navigate('/specialplace');
         } else {
-        // Do nothing!
           console.log('User canceled the action');
         }
     };
@@ -52,13 +53,11 @@ function AddPlaceFill() {
                                 />
                             </div>
                         </div>
-                        <Link to="/specialplace">
                             <button
                                 type="button"
                                 className="w-full bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded mt-6" onClick={SubmitButton}>
                                 Submit
                             </button>
-                        </Link>
                     </form>
                 </div>
             </div>

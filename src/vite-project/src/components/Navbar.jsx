@@ -1,8 +1,9 @@
 import React, {useRef, useEffect, useState} from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import navbarlogo from '../img/logo2.png'
 
 function Navbar() {
+  const navigate = useNavigate();
   const [isOpen, setIsOpen] = useState(false);
 
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -15,8 +16,8 @@ function Navbar() {
     const confirmation = window.confirm('Yakin mau logout?');
 
     if (confirmation) {
-    // Masuk database tiketnya
       console.log('User confirmed the action');
+      navigate('/')
     } else {
     // Do nothing!
       console.log('User canceled the action');
@@ -74,9 +75,9 @@ function Navbar() {
                             <Link to="/create-travel-plan" className="block px-4 py-2 text-sm text-black" role="menuitem">
                                 Create Travel Plan
                             </Link>
-                            <Link to="/" className="block px-4 py-2 text-sm text-black" role="menuitem" onClick={LogOutButton}>
+                            <div className="block px-4 py-2 text-sm text-black" role="menuitem" onClick={LogOutButton}>
                                   Logout
-                            </Link>
+                            </div>
                         </div>
                     </div>
               </div>

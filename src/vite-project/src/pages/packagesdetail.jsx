@@ -1,17 +1,17 @@
 import React from "react";
 import Navbar from '../components/Navbar.jsx'
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 function PackagesDetail() {
+    const navigate = useNavigate();
     const GunakanButton = () => {
         const confirmation = window.confirm('Yakin mau konfirmasi?');
     
         if (confirmation) {
-        // Masuk database tiketnya
           console.log('User confirmed the action');
           window.alert('Paket Perjalanan Berhasil dikonfirmasi!');
+          navigate('/packages');
         } else {
-        // Do nothing!
           console.log('User canceled the action');
         }
     };
@@ -35,11 +35,9 @@ function PackagesDetail() {
                   </div>
               </div>
               <div class="flex space-x-4 mt-44">
-                <Link to="/packages">
                   <button class="voucher-detail-button bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded" onClick={GunakanButton}>
                       Konfirmasi
                   </button>
-                </Link>
               </div>
           </div>
         </div>
