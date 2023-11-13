@@ -52,7 +52,7 @@ function AddPlaceFill() {
                                     className="w-full px-4 py-2 border rounded-md bg-blue-200"
                                 />
                             </div>
-                            <div className="w-1/2 px-3 mb-6">
+                            <div className="w-1/2 px-3">
                                 <label className="block text-xl mb-2">Waktu Mulai</label>
                                 <input
                                     id="waktuMulai"
@@ -60,7 +60,7 @@ function AddPlaceFill() {
                                     className="w-full px-4 py-2 border rounded-md bg-blue-200 text-xs"
                                 />
                             </div>
-                            <div className="w-1/2 px-3 mb-6">
+                            <div className="w-1/2 px-3">
                                 <label className="block text-xl mb-2">Waktu Selesai</label>
                                 <input
                                     id="waktuSelesai"
@@ -69,11 +69,16 @@ function AddPlaceFill() {
                                 />
                             </div>
                         </div>
-                            <button
-                                type="button"
-                                className="w-full bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded mt-6" onClick={SubmitButton}>
-                                Submit
-                            </button>
+                        <p>
+                            <Link to="/choose-voucher" className="text-blue-700 hover:underline font-semibold">
+                                Gunakan Voucher
+                            </Link>
+                        </p>
+                        <button
+                            type="button"
+                            className="w-full bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded mt-6" onClick={SubmitButton}>
+                            Submit
+                        </button>
                     </form>
                 </div>
             </div>

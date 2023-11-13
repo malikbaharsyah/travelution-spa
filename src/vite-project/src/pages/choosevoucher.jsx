@@ -1,7 +1,7 @@
 import React from "react";
 import voucher from '../img/voucher.png'
 import Navbar from '../components/Navbar.jsx'
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const DataDummy = [
     {
@@ -26,12 +26,15 @@ const DataDummy = [
     },
 ]    
 
-function VoucherPage() {
+function ChooseVoucher() {
+    const navigate = useNavigate();
+
     const GunakanButton = () => {
-        const confirmation = window.confirm('Yakin mau menggunakan tiket?');
+        const confirmation = window.confirm('Yakin mau menggunakan voucher?');
     
         if (confirmation) {
-          window.alert('Tiket berhasil digunakan!');
+          window.alert('Voucher berhasil digunakan!');
+          navigate('/add-place-fill');
         }
     };
 
@@ -39,7 +42,7 @@ function VoucherPage() {
     <>
       <Navbar/>
       <h1 class="top-2 font-sans text-4xl font-bold py-10 ml-10">
-		  Voucher Tersedia:
+		  Pilih Voucher yang ingin digunakan:
       </h1>
       {DataDummy.map((item) => {
         return (
@@ -53,11 +56,14 @@ function VoucherPage() {
                         </div>
                     </div>
                     <div class="flex space-x-4">
-                        <Link to="/voucherdetail">
-                        <button class="voucher-detail-button bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded">
-                            Detail
-                        </button>
+                        <Link to="/voucher-use-info">
+                            <button class="voucher-detail-button bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded">
+                                Detail
+                            </button>
                         </Link>
+                        <button class="voucher-detail-button bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded" onClick={GunakanButton}>
+                            Gunakan
+                        </button>
                     </div>
                 </div>
             </div>
@@ -67,4 +73,4 @@ function VoucherPage() {
     );
 }
 
-export default VoucherPage;
+export default ChooseVoucher;

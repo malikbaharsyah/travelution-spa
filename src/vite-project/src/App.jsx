@@ -14,6 +14,8 @@ import VoucherDetail from './pages/voucherdetail.jsx';
 import PackageDetail from './pages/packagesdetail.jsx';
 import PlaceInfo from './pages/placeinformation.jsx';
 import ChooseTravelPlan from './pages/choosetravelplan.jsx';
+import ChooseVoucher from './pages/choosevoucher.jsx';
+import VoucherUseInfo from './pages/voucheruseinfo.jsx';
 import CreateTravelPlan from './pages/createtravelplan.jsx';
 import TravelPlanInfo from './pages/travelplaninfofill.jsx';
 import AddPlaceFill from './pages/addplacefill.jsx';
@@ -37,6 +39,8 @@ function App() {
           <Route path="/packagesdetail" element={<PackageDetail />} />
           <Route path="/placeinformation" element={<PlaceInfo />} />
           <Route path="/select-travel-plan" element={<ChooseTravelPlan />} />
+          <Route path="/choose-voucher" element={<ChooseVoucher />} />
+          <Route path="/voucher-use-info" element={<VoucherUseInfo />} />
           <Route path="/create-travel-plan" element={<CreateTravelPlan />} />
           <Route path="/travel-plan-info-fill" element={<TravelPlanInfo />} />
           <Route path="/add-place-fill" element={<AddPlaceFill />} />

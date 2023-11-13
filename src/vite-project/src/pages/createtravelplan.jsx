@@ -31,7 +31,7 @@ function CreateTravelPlan() {
     <>
       <Navbar/>
       <h1 class="top-2 font-sans text-4xl font-bold py-10 ml-10">
-		  Pilih Travel Plan:
+		  Daftar Travel Plan:
       </h1>
       {DataDummy.map((item) => {
         return (
