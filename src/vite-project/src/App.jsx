@@ -19,6 +19,8 @@ import VoucherUseInfo from './pages/voucheruseinfo.jsx';
 import CreateTravelPlan from './pages/createtravelplan.jsx';
 import TravelPlanInfo from './pages/travelplaninfofill.jsx';
 import AddPlaceFill from './pages/addplacefill.jsx';
+import SelectConfirmation from './pages/selectconfirmation.jsx';
+import ConfirmationTravelPlan from './pages/confirmation.jsx';
 
 function App() {
   const [isOpen, setIsOpen] = useState(false);
@@ -44,6 +46,8 @@ function App() {
           <Route path="/create-travel-plan" element={<CreateTravelPlan />} />
           <Route path="/travel-plan-info-fill" element={<TravelPlanInfo />} />
           <Route path="/add-place-fill" element={<AddPlaceFill />} />
+          <Route path="/select-confirmation" element={<SelectConfirmation />} />
+          <Route path="/travel-plan-confirm" element={<ConfirmationTravelPlan />} />
         </Routes>
       </Router>
     </>

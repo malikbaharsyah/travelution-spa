@@ -18,7 +18,7 @@ function Navbar() {
     if (confirmation) {
       navigate('/')
     }
-};
+  };
 
   return (
     <nav className="bg-blue-400 p-4">
@@ -59,7 +59,7 @@ function Navbar() {
             <Link to="/create-travel-plan" className="text-black text-center">Travel Plan</Link>
             <Link to="/specialplace" className="text-black">Place List</Link>
             <Link to="/packages" className="text-black">Packages</Link>
-            <Link to="/travel-plan-confirm" className="text-black">Konfirmasi</Link>
+            <Link to="/select-confirmation" className="text-black">Konfirmasi</Link>
             <div onClick={toggleDropdown} className="relative inline-block text-left text-black focus:outline-none hover:text-indigo-500">
                         Jason
                     <div
