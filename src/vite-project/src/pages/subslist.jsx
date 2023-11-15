@@ -1,5 +1,5 @@
 import React from "react";
-import Navbar from '../components/Navbar.jsx'
+import NavbarAdmin from '../components/NavbarAdmin.jsx'
 
 const DataDummy = [
     {
@@ -64,7 +64,7 @@ const DataDummy = [
 function SubscriptionsList() {
     return (
         <>
-        <Navbar/>
+        <NavbarAdmin/>
         <h1 class="top-2 font-sans text-4xl font-bold py-10 text-center mt-5 mb-3">
             Daftar Pengguna Subscriptions:
         </h1>

@@ -1,5 +1,5 @@
 import React from "react";
-import Navbar from '../components/Navbar.jsx'
+import NavbarAdmin from '../components/NavbarAdmin.jsx'
 import { Link, useNavigate } from 'react-router-dom';
 
 function PackagesDetail() {
@@ -15,7 +15,7 @@ function PackagesDetail() {
 
     return (
     <>
-        <Navbar/>
+        <NavbarAdmin/>
         <div class="bg-white rounded-xl max-w-screen-2xl p-10 mt-40 mx-40">
         <h1 class="font-sans text-5xl font-bold text-black mb-3">
             Package A

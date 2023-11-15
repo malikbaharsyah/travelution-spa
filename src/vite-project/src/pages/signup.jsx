@@ -1,5 +1,6 @@
 import React from "react";
 import { Link, useNavigate } from 'react-router-dom';
+import accountdummy from './accountdummy.jsx';
 
 function Signup() {
     const navigate = useNavigate();
@@ -25,6 +26,12 @@ function Signup() {
         }
 
         if (confirmation){
+            const newAccount = {
+                username,
+                password,
+            };
+            accountdummy.push(newAccount);
+
             window.alert('Berhasil membuat akun!');
             navigate('/');
         }

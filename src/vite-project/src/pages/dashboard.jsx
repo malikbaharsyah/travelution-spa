@@ -1,11 +1,12 @@
 import React from "react";
 import DashboardImage from "../img/seablue.jpg";
-import Navbar from '../components/Navbar.jsx'
+import NavbarAdmin from '../components/NavbarAdmin.jsx'
+import NavbarUser from '../components/NavbarUser.jsx'
 
   function Dashboard() {
     return (
       <>
-        <Navbar/>
+        <NavbarAdmin/>
         <div className="landingpage">
           <img src={DashboardImage} id='landingimage' alt="landingimage" className="w-full" />
           <div className="titletext absolute top-72 w-full text-center">

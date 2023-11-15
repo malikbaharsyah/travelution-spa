@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Navbar from './components/Navbar.jsx';
+import NavbarAdmin from './components/NavbarAdmin.jsx';
 import "./App.css";
 import "./index.css";
 import Login from './pages/login.jsx';
@@ -9,6 +9,7 @@ import Dashboard from './pages/dashboard.jsx';
 import Voucher from './pages/voucherpage.jsx';
 import Packages from './pages/packagespage.jsx';
 import Subscriptions from './pages/subslist.jsx';
+import SubscriptionsReq from './pages/subscriptionsreq.jsx';
 import SpecialPlace from './pages/subsaspecialplace.jsx';
 import VoucherDetail from './pages/voucherdetail.jsx';
 import PackageDetail from './pages/packagesdetail.jsx';
@@ -21,6 +22,7 @@ import TravelPlanInfo from './pages/travelplaninfofill.jsx';
 import AddPlaceFill from './pages/addplacefill.jsx';
 import SelectConfirmation from './pages/selectconfirmation.jsx';
 import ConfirmationTravelPlan from './pages/confirmation.jsx';
+import SubsRegister from './pages/subsregister.jsx';
 
 function App() {
   const [isOpen, setIsOpen] = useState(false);
@@ -36,6 +38,7 @@ function App() {
           <Route path="/voucher" element={<Voucher />} />
           <Route path="/packages" element={<Packages />} />
           <Route path="/subscriptions" element={<Subscriptions />} />
+          <Route path="/subscriptionsreq" element={<SubscriptionsReq />} />
           <Route path="/specialplace" element={<SpecialPlace />} />
           <Route path="/voucherdetail" element={<VoucherDetail />} />
           <Route path="/packagesdetail" element={<PackageDetail />} />
@@ -48,6 +51,7 @@ function App() {
           <Route path="/add-place-fill" element={<AddPlaceFill />} />
           <Route path="/select-confirmation" element={<SelectConfirmation />} />
           <Route path="/travel-plan-confirm" element={<ConfirmationTravelPlan />} />
+          <Route path="/subs-register" element={<SubsRegister />} />
         </Routes>
       </Router>
     </>

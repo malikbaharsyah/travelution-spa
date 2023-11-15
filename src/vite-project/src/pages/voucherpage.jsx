@@ -1,6 +1,6 @@
 import React from "react";
 import voucher from '../img/voucher.png'
-import Navbar from '../components/Navbar.jsx'
+import NavbarAdmin from '../components/NavbarAdmin.jsx'
 import { Link } from 'react-router-dom';
 
 const DataDummy = [
@@ -37,7 +37,7 @@ function VoucherPage() {
 
     return (
     <>
-      <Navbar/>
+      <NavbarAdmin/>
       <h1 class="top-2 font-sans text-4xl font-bold py-10 ml-10">
 		  Voucher Tersedia:
       </h1>

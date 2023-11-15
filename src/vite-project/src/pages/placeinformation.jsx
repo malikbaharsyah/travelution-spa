@@ -1,12 +1,12 @@
 import React from "react";
 import travelpic from '../img/purpletravel.jpg'
-import Navbar from '../components/Navbar.jsx'
+import NavbarAdmin from '../components/NavbarAdmin.jsx'
 import { Link } from "react-router-dom";
 
 function PlaceInformation() {
     return (
     <>
-        <Navbar/>
+        <NavbarAdmin/>
         <div className="bg-white rounded-xl max-w-screen-2xl p-10 mt-5 mx-5">
           <div style={{ display: 'flex', justifyContent: 'space-between' }}>
                 <h1 className="font-sans text-5xl font-bold text-black mb-5">

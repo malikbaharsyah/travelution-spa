@@ -1,6 +1,6 @@
 import React from "react";
 import travelpic from '../img/purpletravel.jpg'
-import Navbar from '../components/Navbar.jsx'
+import NavbarAdmin from '../components/NavbarAdmin.jsx'
 import { Link } from "react-router-dom";
 
 const DataDummy = [
@@ -129,7 +129,7 @@ const DataDummy = [
 function SubsSpecialPlace() {
     return (
     <>
-        <Navbar/>
+        <NavbarAdmin/>
         <h1 class="top-2 font-sans text-4xl font-bold py-10 text-center mb-4">
             Daftar Tempat Spesial Subscriptions:
         </h1>

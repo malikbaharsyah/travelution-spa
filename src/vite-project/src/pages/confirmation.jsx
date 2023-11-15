@@ -1,5 +1,5 @@
 import React from "react";
-import Navbar from '../components/Navbar.jsx'
+import NavbarAdmin from '../components/NavbarAdmin.jsx'
 import { Link, useNavigate } from 'react-router-dom';
 
 const DataDummy1 = [
@@ -82,7 +82,7 @@ function ConfirmationTravelPlan() {
 
     return (
         <>
-        <Navbar/>
+        <NavbarAdmin/>
         <h1 class="top-2 font-sans text-4xl font-bold py-10 text-center mt-5 mb-3">
             Informasi Rencana Perjalanan:
         </h1>

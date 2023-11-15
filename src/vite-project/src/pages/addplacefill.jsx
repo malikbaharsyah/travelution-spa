@@ -1,4 +1,5 @@
 import React from "react";
+import NavbarAdmin from '../components/NavbarAdmin.jsx'
 import { Link, useNavigate } from 'react-router-dom';
 
 function AddPlaceFill() {
@@ -29,8 +30,9 @@ function AddPlaceFill() {
 
     return (
         <>
+            <NavbarAdmin/>
             <div className="flex justify-center text-black mt-11">
-                <div className="p-6 rounded-lg shadow-md bg-gray-100 w-1/3 mb-20 mt-16">
+                <div className="p-6 rounded-lg shadow-md bg-gray-100 w-1/3 mb-10 mt-8">
                     <h1 className="font-sans text-4xl font-bold pt-5 mb-10 text-center">
                         Fill Information:
                     </h1>

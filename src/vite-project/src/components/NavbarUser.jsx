@@ -1,8 +1,8 @@
 import React, {useRef, useEffect, useState} from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import navbarlogo from '../img/logo2.png'
+import NavbarUserlogo from '../img/logo2.png'
 
-function Navbar() {
+function NavbarUser() {
   const navigate = useNavigate();
   const [isOpen, setIsOpen] = useState(false);
 
@@ -23,7 +23,7 @@ function Navbar() {
   return (
     <nav className="bg-blue-400 p-4">
       <div className="flex items-center justify-between">
-        <img src={navbarlogo} alt="navbarlogo" class="w-24 h-9"/>
+        <img src={NavbarUserlogo} alt="navbarlogo" class="w-24 h-9"/>
         <div className="md:hidden">
           <button
             onClick={() => setIsOpen(!isOpen)}
@@ -69,7 +69,6 @@ function Navbar() {
                     >
                         <div className="py-1" role="menu" aria-orientation="vertical" aria-labelledby="options-menu">
                             <Link to="/voucher" className="block px-4 py-2 text-sm text-black" role="menuitem">Voucher</Link>
-                            <Link to="/subscriptions" className="block px-4 py-2 text-sm text-black" role="menuitem">Subscriptions</Link>
                             <div className="block px-4 py-2 text-sm text-black" role="menuitem" onClick={LogOutButton}>
                                   Logout
                             </div>
@@ -83,4 +82,4 @@ function Navbar() {
   );
 }
 
-export default Navbar;
+export default NavbarUser;
