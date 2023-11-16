@@ -1,6 +1,6 @@
 import React from "react";
 import voucher from '../img/voucher.png'
-import NavbarAdmin from '../components/NavbarAdmin.jsx'
+import NavbarUser from '../components/NavbarUser.jsx'
 import { Link } from 'react-router-dom';
 
 const DataDummy = [
@@ -26,7 +26,7 @@ const DataDummy = [
     },
 ]    
 
-function VoucherPage() {
+function VoucherPageUser() {
     const GunakanButton = () => {
         const confirmation = window.confirm('Yakin mau menggunakan tiket?');
     
@@ -37,7 +37,7 @@ function VoucherPage() {
 
     return (
     <>
-      <NavbarAdmin/>
+      <NavbarUser/>
       <h1 class="top-2 font-sans text-4xl font-bold py-10 ml-10">
 		  Voucher Tersedia:
       </h1>
@@ -67,4 +67,4 @@ function VoucherPage() {
     );
 }
 
-export default VoucherPage;
+export default VoucherPageUser;

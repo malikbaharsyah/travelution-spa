@@ -1,5 +1,5 @@
 import React from "react";
-import NavbarAdmin from '../components/NavbarAdmin.jsx'
+import NavbarUser from '../components/NavbarUser.jsx'
 import { Link, useNavigate } from 'react-router-dom';
 
 function PackagesDetail() {
@@ -9,13 +9,13 @@ function PackagesDetail() {
     
         if (confirmation) {
           window.alert('Paket Perjalanan Berhasil dikonfirmasi!');
-          navigate('/packages');
+          navigate('/packagescheckout');
         }
     };
 
     return (
     <>
-        <NavbarAdmin/>
+        <NavbarUser/>
         <div class="bg-white rounded-xl max-w-screen-2xl p-10 mt-40 mx-40">
         <h1 class="font-sans text-5xl font-bold text-black mb-3">
             Package A
@@ -32,6 +32,9 @@ function PackagesDetail() {
                   </div>
               </div>
               <div class="flex space-x-4 mt-44">
+                  <Link to="/choose-voucher" className=" bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded w-44 text-center">
+                        Gunakan Voucher
+                  </Link>
                   <button class="voucher-detail-button bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded" onClick={GunakanButton}>
                       Konfirmasi
                   </button>

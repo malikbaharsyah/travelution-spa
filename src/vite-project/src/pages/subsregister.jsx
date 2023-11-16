@@ -1,5 +1,5 @@
 import React from "react";
-import NavbarAdmin from '../components/NavbarAdmin.jsx'
+import NavbarUser from '../components/NavbarUser.jsx'
 import { Link, useNavigate } from 'react-router-dom';
 
 function SubsRegister() {
@@ -15,7 +15,7 @@ function SubsRegister() {
 
     return (
     <>
-        <NavbarAdmin/>
+        <NavbarUser/>
         <div class="bg-white rounded-xl max-w-screen-2xl p-10 mt-32 mx-20">
         <h1 class="font-sans text-5xl font-bold text-black mb-10 text-center">
             Ayo Daftarkan Subscriptions !!!

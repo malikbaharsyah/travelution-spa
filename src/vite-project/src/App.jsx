@@ -1,27 +1,22 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import NavbarAdmin from './components/NavbarAdmin.jsx';
 import "./App.css";
 import "./index.css";
 import Login from './pages/login.jsx';
 import Signup from './pages/signup.jsx';
 import Dashboard from './pages/dashboard.jsx';
-import Voucher from './pages/voucherpage.jsx';
-import Packages from './pages/packagespage.jsx';
+import VoucherUser from './pages/voucherpageuser.jsx';
+import VoucherAdmin from './pages/voucherpageadmin.jsx';
+import PackagesUser from './pages/packagespageuser.jsx';
+import PackagesAdmin from './pages/packagespageadmin.jsx';
 import Subscriptions from './pages/subslist.jsx';
 import SubscriptionsReq from './pages/subscriptionsreq.jsx';
-import SpecialPlace from './pages/subsaspecialplace.jsx';
-import VoucherDetail from './pages/voucherdetail.jsx';
-import PackageDetail from './pages/packagesdetail.jsx';
-import PlaceInfo from './pages/placeinformation.jsx';
-import ChooseTravelPlan from './pages/choosetravelplan.jsx';
+import VoucherDetail from './pages/voucherdetailuser.jsx';
+import VoucherDetailInfo from './pages/voucherdetailadmin.jsx';
+import PackagesDetailConfirm from './pages/packagesdetailuser.jsx';
+import PackagesDetailInfo from './pages/packagesdetailadmin.jsx';
 import ChooseVoucher from './pages/choosevoucher.jsx';
 import VoucherUseInfo from './pages/voucheruseinfo.jsx';
-import CreateTravelPlan from './pages/createtravelplan.jsx';
-import TravelPlanInfo from './pages/travelplaninfofill.jsx';
-import AddPlaceFill from './pages/addplacefill.jsx';
-import SelectConfirmation from './pages/selectconfirmation.jsx';
-import ConfirmationTravelPlan from './pages/confirmation.jsx';
 import SubsRegister from './pages/subsregister.jsx';
 
 function App() {
@@ -35,22 +30,18 @@ function App() {
           <Route path="/" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/voucher" element={<Voucher />} />
-          <Route path="/packages" element={<Packages />} />
+          <Route path="/vouchercheck" element={<VoucherUser />} />
+          <Route path="/voucheredit" element={<VoucherAdmin />} />
+          <Route path="/packagescheckout" element={<PackagesUser />} />
+          <Route path="/packagesinfo" element={<PackagesAdmin />} />
           <Route path="/subscriptions" element={<Subscriptions />} />
           <Route path="/subscriptionsreq" element={<SubscriptionsReq />} />
-          <Route path="/specialplace" element={<SpecialPlace />} />
           <Route path="/voucherdetail" element={<VoucherDetail />} />
-          <Route path="/packagesdetail" element={<PackageDetail />} />
-          <Route path="/placeinformation" element={<PlaceInfo />} />
-          <Route path="/select-travel-plan" element={<ChooseTravelPlan />} />
+          <Route path="/voucherdetailinfo" element={<VoucherDetailInfo />} />
+          <Route path="/packagesdetailconfirm" element={<PackagesDetailConfirm />} />
+          <Route path="/packagesdetailinfo" element={<PackagesDetailInfo />} />
           <Route path="/choose-voucher" element={<ChooseVoucher />} />
           <Route path="/voucher-use-info" element={<VoucherUseInfo />} />
-          <Route path="/create-travel-plan" element={<CreateTravelPlan />} />
-          <Route path="/travel-plan-info-fill" element={<TravelPlanInfo />} />
-          <Route path="/add-place-fill" element={<AddPlaceFill />} />
-          <Route path="/select-confirmation" element={<SelectConfirmation />} />
-          <Route path="/travel-plan-confirm" element={<ConfirmationTravelPlan />} />
           <Route path="/subs-register" element={<SubsRegister />} />
         </Routes>
       </Router>

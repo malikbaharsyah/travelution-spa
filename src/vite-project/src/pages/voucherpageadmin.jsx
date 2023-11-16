@@ -1,7 +1,7 @@
 import React from "react";
 import voucher from '../img/voucher.png'
 import NavbarAdmin from '../components/NavbarAdmin.jsx'
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const DataDummy = [
     {
@@ -26,15 +26,12 @@ const DataDummy = [
     },
 ]    
 
-function ChooseVoucher() {
-    const navigate = useNavigate();
-
+function VoucherPage() {
     const GunakanButton = () => {
-        const confirmation = window.confirm('Yakin mau menggunakan voucher?');
+        const confirmation = window.confirm('Yakin mau menghapus tiket?');
     
         if (confirmation) {
-          window.alert('Voucher berhasil digunakan!');
-          navigate('/packagesdetailconfirm');
+          window.alert('Tiket berhasil dihapus!');
         }
     };
 
@@ -42,7 +39,7 @@ function ChooseVoucher() {
     <>
       <NavbarAdmin/>
       <h1 class="top-2 font-sans text-4xl font-bold py-10 ml-10">
-		  Pilih Voucher yang ingin digunakan:
+		  Voucher Tersedia:
       </h1>
       {DataDummy.map((item) => {
         return (
@@ -56,21 +53,30 @@ function ChooseVoucher() {
                         </div>
                     </div>
                     <div class="flex space-x-4">
-                        <Link to="/voucher-use-info">
-                            <button class="voucher-detail-button bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded">
-                                Detail
-                            </button>
+                        <Link to="/voucherdetailinfo">
+                        <button class="voucher-detail-button bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded">
+                            Detail
+                        </button>
                         </Link>
-                        <button class="voucher-detail-button bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded" onClick={GunakanButton}>
-                            Gunakan
+                        <button class="voucher-detail-button bg-red-500 hover:bg-red-400 text-white font-bold py-2 px-4 border-b-4 border-red-700 hover:border-red-500 rounded" onClick={GunakanButton}>
+                            Delete
                         </button>
                     </div>
                 </div>
             </div>
             )
         })}
+        <div style={{ position: 'fixed', bottom: '35px', right: '50px' }}>
+            <Link to="/voucherinfofill">
+                <button
+                        className="voucher-detail-button bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded-full" // Update this line
+                        style={{ borderRadius: '50%', width: '100px', height: '60px' }}
+                    >   Add +
+                </button>
+            </Link>
+        </div>
     </>
     );
 }
 
-export default ChooseVoucher;
+export default VoucherPage;

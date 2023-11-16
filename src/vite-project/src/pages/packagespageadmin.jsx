@@ -18,21 +18,7 @@ const DataDummy = [
     },
 ]    
 
-function PackagesPage() {
-    const navigate = useNavigate();
-
-    const KonfirmasiButton = (index) => {
-        const confirmation = window.confirm('Yakin mau konfirmasi?');
-    
-        if (confirmation) {
-            if (index === DataDummy.length - 1) {
-              navigate('/subs-register');
-            } else {
-                window.alert('Paket Perjalanan Berhasil dikonfirmasi!');
-            }
-        }
-    };
-
+function PackagesPageAdmin() {
     return (
         <>
             <NavbarAdmin/>
@@ -50,20 +36,26 @@ function PackagesPage() {
                             </div>
                         </div>
                         <div class="flex space-x-4">
-                            <Link to="/packagesdetail">
+                            <Link to="/packagesdetailinfo">
                                 <button class="voucher-detail-button bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded">
                                     Detail
                                 </button>
                             </Link>
-                            <button class="voucher-detail-button bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded" onClick={() => KonfirmasiButton(index)}>
-                                Konfirmasi
-                            </button>
                         </div>
                     </div>
                 </div>
             ))}
+            <div style={{ position: 'fixed', bottom: '35px', right: '50px' }}>
+            <Link to="/packagesinfofill">
+                    <button
+                        className="voucher-detail-button bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded-full" // Update this line
+                        style={{ borderRadius: '50%', width: '100px', height: '60px' }}
+                    >   Add +
+                    </button>
+                </Link>
+            </div>
         </>
     );
 }
 
-export default PackagesPage;
+export default PackagesPageAdmin;

@@ -56,10 +56,8 @@ function NavbarAdmin({username}) {
         <div className={`md:flex items-center ${isOpen ? 'block' : 'hidden'}`}>
           <div className="md:flex items-center space-x-6 mr-2">
             <Link to="/dashboard" className="text-black">Home</Link>
-            <Link to="/create-travel-plan" className="text-black text-center">Travel Plan</Link>
-            <Link to="/specialplace" className="text-black">Place List</Link>
-            <Link to="/packages" className="text-black">Packages</Link>
-            <Link to="/select-confirmation" className="text-black">Konfirmasi</Link>
+            <Link to="/packagesinfo" className="text-black">Packages</Link>
+            <Link to="/voucheredit" className="text-black">Voucher</Link>
             <div onClick={toggleDropdown} className="relative inline-block text-left text-black focus:outline-none hover:text-indigo-500">
                         Jason
                     <div
@@ -68,7 +66,6 @@ function NavbarAdmin({username}) {
                         } origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none`}
                     >
                         <div className="py-1" role="menu" aria-orientation="vertical" aria-labelledby="options-menu">
-                            <Link to="/voucher" className="block px-4 py-2 text-sm text-black" role="menuitem">Voucher</Link>
                             <Link to="/subscriptions" className="block px-4 py-2 text-sm text-black" role="menuitem">User Subscriptions</Link>
                             <Link to="/subscriptionsreq" className="block px-4 py-2 text-sm text-black" role="menuitem">Request Subscriptions</Link>
                             <div className="block px-4 py-2 text-sm text-black" role="menuitem" onClick={LogOutButton}>
