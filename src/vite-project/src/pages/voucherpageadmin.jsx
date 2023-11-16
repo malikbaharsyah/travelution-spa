@@ -9,29 +9,31 @@ const DataDummy = [
       "desc" : "Diskon 10% khusus di hari Selasa",
     },
     {
-      "name" : 'Voucher A',
-      "desc" : "Diskon 10% khusus di hari Selasa",
+      "name" : 'Voucher B', 
+      "desc" : "Diskon 10% khusus di hari Rabu",
     },
     {
-      "name" : 'Voucher A',
-      "desc" : "Diskon 10% khusus di hari Selasa",
+      "name" : 'Voucher C', 
+      "desc" : "Diskon 10% khusus di hari Kamis",
     },
     {
-      "name" : 'Voucher A',
-      "desc" : "Diskon 10% khusus di hari Selasa",
+      "name" : 'Voucher D', 
+      "desc" : "Diskon 10% khusus di hari Jumat",
     },
     {
-      "name" : 'Voucher A',
-      "desc" : "Diskon 10% khusus di hari Selasa",
+      "name" : 'Voucher E', 
+      "desc" : "Diskon 10% khusus di hari Sabtu",
     },
-]    
+];   
 
-function VoucherPage() {
-    const GunakanButton = () => {
-        const confirmation = window.confirm('Yakin mau menghapus tiket?');
-    
+const VoucherPage = () => {
+    const GunakanButton = (index) => {
+        const confirmation = window.confirm('Yakin mau menghapus voucher?');
+
         if (confirmation) {
-          window.alert('Tiket berhasil dihapus!');
+            const deleteVoucher = DataDummy[index];
+            console.log(`${deleteVoucher.name} berhasil dihapus!`);
+            window.alert('Voucher berhasil dihapus!');
         }
     };
 
@@ -41,9 +43,9 @@ function VoucherPage() {
       <h1 class="top-2 font-sans text-4xl font-bold py-10 ml-10">
 		  Voucher Tersedia:
       </h1>
-      {DataDummy.map((item) => {
+      {DataDummy.map((item, index) => {
         return (
-            <div class="bg-white rounded-xl max-w-screen-2xl p-5 pt-5 mb-6 ml-10 mr-10">
+            <div class="bg-white rounded-xl max-w-screen-2xl p-5 pt-5 mb-6 ml-10 mr-10" key={index}>
                 <div class="flex justify-between items-center">
                     <div class="flex items-center">
                         <img src={voucher} alt="voucher" class="w-16 h-16 ml-5 mr-7"/>
@@ -58,7 +60,7 @@ function VoucherPage() {
                             Detail
                         </button>
                         </Link>
-                        <button class="voucher-detail-button bg-red-500 hover:bg-red-400 text-white font-bold py-2 px-4 border-b-4 border-red-700 hover:border-red-500 rounded" onClick={GunakanButton}>
+                        <button class="voucher-detail-button bg-red-500 hover:bg-red-400 text-white font-bold py-2 px-4 border-b-4 border-red-700 hover:border-red-500 rounded" onClick={() => GunakanButton(index)}>
                             Delete
                         </button>
                     </div>
@@ -69,7 +71,7 @@ function VoucherPage() {
         <div style={{ position: 'fixed', bottom: '35px', right: '50px' }}>
             <Link to="/voucherinfofill">
                 <button
-                        className="voucher-detail-button bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded-full" // Update this line
+                        className="voucher-detail-button bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded-full"
                         style={{ borderRadius: '50%', width: '100px', height: '60px' }}
                     >   Add +
                 </button>

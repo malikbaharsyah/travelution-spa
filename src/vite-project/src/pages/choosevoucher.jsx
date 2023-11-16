@@ -33,6 +33,7 @@ function ChooseVoucher() {
         const confirmation = window.confirm('Yakin mau menggunakan voucher?');
     
         if (confirmation) {
+          console.log('Voucher berhasil digunakan!');
           window.alert('Voucher berhasil digunakan!');
           navigate('/packagesdetailconfirm');
         }

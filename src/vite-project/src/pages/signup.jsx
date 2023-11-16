@@ -26,12 +26,20 @@ function Signup() {
         }
 
         if (confirmation){
+            console.log('Username:', username);
+            console.log('Password:', password);
+            console.log('First Name:', firstname);
+            console.log('Last Name:', lastname);
+            console.log('Email:', email);
+            console.log('Phone Number:', phonenumber);
+
             const newAccount = {
                 username,
                 password,
             };
             accountdummy.push(newAccount);
 
+            console.log("Berhasil membuat akun!");
             window.alert('Berhasil membuat akun!');
             navigate('/');
         }

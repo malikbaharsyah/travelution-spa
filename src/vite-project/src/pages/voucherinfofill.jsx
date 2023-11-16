@@ -5,23 +5,21 @@ import { Link, useNavigate } from 'react-router-dom';
 function VoucherInfoFill() {
     const navigate = useNavigate();
     const SubmitButton = () => {
-        const namaVoucher = document.getElementById('namaTravelPlan').value;
+        const namaVoucher = document.getElementById('namaVoucher').value;
         const descVoucher = document.getElementById('descVoucher').value;
         const confirmation = window.confirm('Yakin mau membuat voucher?');
 
-        if (namaVoucher === '' || descvoucher === '') {
+        if (namaVoucher === '' || descVoucher === '') {
             window.alert('Isi datanya mas/mbak!');
-            return;
-        }
-
-        if (waktuMulai > waktuSelesai) {
-            window.alert('Data tidak valid');
             return;
         }
     
         if (confirmation) {
-          window.alert('Paket Perjalanan Berhasil dibuat!');
-          navigate('/create-travel-plan');
+          console.log("Nama Voucher: " + namaVoucher);
+            console.log("Deskripsi Voucher: " + descVoucher);
+          console.log(`${namaVoucher} berhasil dibuat!`);
+          window.alert('Voucher berhasil dibuat!');
+          navigate('/voucheredit');
         }
     };
     return (
@@ -45,6 +43,7 @@ function VoucherInfoFill() {
                             <div className="w-full px-3 mb-6">
                                 <label className="block text-xl mb-2">Deskripsi</label>
                                 <textarea
+                                    id="descVoucher"
                                     className="w-full px-4 py-2 border rounded-md bg-blue-200"
                                     rows="4"
                                 ></textarea>

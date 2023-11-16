@@ -25,9 +25,11 @@ function PackagesPageUser() {
         const confirmation = window.confirm('Yakin mau konfirmasi?');
     
         if (confirmation) {
+            const confirmedPackage = DataDummy[index];
             if (index === DataDummy.length - 1) {
               navigate('/subs-register');
             } else {
+                console.log(`Paket Perjalanan ${confirmedPackage.title} dengan tujuan ${confirmedPackage.loc} berhasil dikonfirmasi!`);                
                 window.alert('Paket Perjalanan Berhasil dikonfirmasi!');
             }
         }

@@ -13,20 +13,29 @@ function PackagesUpdateFill() {
         const waktuSelesai = document.getElementById('waktuSelesai').value;
         const harga = document.getElementById('harga').value;
         const confirmation = window.confirm('Yakin mau update informasi package?');
+        const isHargaValid = Number.isInteger(Number(harga));
 
         if (namaPackage === '' || kota === '' || rute === '' || deskripsi === '' || waktuMulai === '' || waktuSelesai === '' || harga === '') {
             window.alert('Isi datanya mas/mbak!');
             return;
         }
 
-        if (waktuMulai > waktuSelesai || harga < 0) {
+        if (waktuMulai > waktuSelesai || harga < 0 || !isHargaValid) {
             window.alert('Data tidak valid');
             return;
         }
     
         if (confirmation) {
-          window.alert('Informasi Package berhasil diperbaharui!');
-          navigate('/packagesdetailinfo');
+            console.log('Nama Package:', namaPackage);
+            console.log('Kota:', kota);
+            console.log('Rute:', rute);
+            console.log('Deskripsi:', deskripsi);
+            console.log('Waktu Mulai:', waktuMulai);
+            console.log('Waktu Selesai:', waktuSelesai);
+            console.log('Harga:', harga);
+            console.log('Berhasil update informasi package!');
+            window.alert('Informasi Package berhasil diperbaharui!');
+            navigate('/packagesdetailinfo');
         }
     };
     return (

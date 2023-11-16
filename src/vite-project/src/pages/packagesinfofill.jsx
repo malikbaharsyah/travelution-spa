@@ -25,8 +25,16 @@ function PackagesInfoFill() {
         }
     
         if (confirmation) {
-          window.alert('Package Perjalanan Berhasil dibuat!');
-          navigate('/packagesinfo');
+            console.log('Nama Package:', namaPackage);
+            console.log('Kota:', kota);
+            console.log('Rute:', rute);
+            console.log('Deskripsi:', deskripsi);
+            console.log('Waktu Mulai:', waktuMulai);
+            console.log('Waktu Selesai:', waktuSelesai);
+            console.log('Harga:', harga);
+            console.log('Berhasil membuat package baru yaitu', namaPackage, '!');
+            window.alert('Package Perjalanan Berhasil dibuat!');
+            navigate('/packagesinfo');
         }
     };
     return (

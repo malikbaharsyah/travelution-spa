@@ -8,6 +8,7 @@ function SubsRegister() {
         const confirmation = window.confirm('Yakin mau daftar subscription?');
     
         if (confirmation) {
+          console.log('Sudah berhasil mendaftarkan, silahkan tunggu konfirmasi dari admin');
           window.alert('Sudah berhasil mendaftarkan, silahkan tunggu konfirmasi dari admin');
           navigate('/dashboard');
         }

@@ -8,14 +8,14 @@ const DataDummy = [
         "lastName": "Doe",
     },
     {
-        "username": "user1",
-        "firstName": "John",
-        "lastName": "Doe",
+        "username": "user2",
+        "firstName": "Johns",
+        "lastName": "Does",
     },
     {
-        "username": "user1",
-        "firstName": "John",
-        "lastName": "Doe",
+        "username": "user3",
+        "firstName": "Johny",
+        "lastName": "Doez",
     },
 ]
 
@@ -28,9 +28,9 @@ function SubscriptionsReq() {
         if (acceptConfirmation) {
             const updatedData = data.filter(item => item.username !== username);
             setData(updatedData);
-
-            window.alert('Request Subscription Berhasil diterima! Pengguna sudah mendapatkan akses subscription!');
+            
             console.log(`Accepted: ${username}`);
+            window.alert('Request Subscription Berhasil diterima! Pengguna sudah mendapatkan akses subscription!');
         }
     };
 

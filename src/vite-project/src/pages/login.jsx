@@ -11,12 +11,16 @@ function Login() {
         const username = document.getElementById('username').value;
         const password = document.getElementById('password').value;
 
+        console.log('Username:', username);
+        console.log('Password:', password);
+
         const user = accountdummy.find(
             (cred) => cred.username === username && cred.password === password
           );
       
           if (user) {
             setLoggedInUser(user);
+            console.log('Berhasil login!');
             navigate('/dashboard', { state: { role: user.role } });
           } else {
             window.alert('Username or password tidak tepat, silahkan coba lagi');

@@ -8,6 +8,7 @@ function PackagesDetail() {
         const confirmation = window.confirm('Yakin mau konfirmasi?');
     
         if (confirmation) {
+          console.log('Paket Perjalanan Berhasil dikonfirmasi!');
           window.alert('Paket Perjalanan Berhasil dikonfirmasi!');
           navigate('/packagescheckout');
         }

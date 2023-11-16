@@ -4,10 +4,11 @@ import { Link, useNavigate } from 'react-router-dom';
 
 function PackagesDetail() {
     const navigate = useNavigate();
-    const GunakanButton = () => {
+    const DeleteButton = () => {
         const confirmation = window.confirm('Yakin mau hapus packages?');
     
         if (confirmation) {
+          console.log('Paket Perjalanan Berhasil dihapus!');
           window.alert('Paket Perjalanan Berhasil dihapus!');
           navigate('/packagesinfo');
         }
@@ -35,7 +36,7 @@ function PackagesDetail() {
                   <Link to="/packagesupdateinfo" className=" bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded text-center">
                         Update
                   </Link>
-                  <button class="voucher-detail-button bg-red-500 hover:bg-red-400 text-white font-bold py-2 px-4 border-b-4 border-red-700 hover:border-red-500 rounded" onClick={GunakanButton}>
+                  <button class="voucher-detail-button bg-red-500 hover:bg-red-400 text-white font-bold py-2 px-4 border-b-4 border-red-700 hover:border-red-500 rounded" onClick={DeleteButton}>
                       Delete
                   </button>
               </div>
