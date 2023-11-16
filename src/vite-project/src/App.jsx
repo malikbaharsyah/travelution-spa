@@ -15,6 +15,9 @@ import VoucherDetail from './pages/voucherdetailuser.jsx';
 import VoucherDetailInfo from './pages/voucherdetailadmin.jsx';
 import PackagesDetailConfirm from './pages/packagesdetailuser.jsx';
 import PackagesDetailInfo from './pages/packagesdetailadmin.jsx';
+import PackagesInfoFill from './pages/packagesinfofill.jsx';
+import VoucherInfoFill from './pages/voucherinfofill.jsx';
+import PackagesUpdateInfo from './pages/packagesupdateinfo.jsx';
 import ChooseVoucher from './pages/choosevoucher.jsx';
 import VoucherUseInfo from './pages/voucheruseinfo.jsx';
 import SubsRegister from './pages/subsregister.jsx';
@@ -40,6 +43,9 @@ function App() {
           <Route path="/voucherdetailinfo" element={<VoucherDetailInfo />} />
           <Route path="/packagesdetailconfirm" element={<PackagesDetailConfirm />} />
           <Route path="/packagesdetailinfo" element={<PackagesDetailInfo />} />
+          <Route path="/packagesinfofill" element={<PackagesInfoFill />} />
+          <Route path="/voucherinfofill" element={<VoucherInfoFill />} />
+          <Route path="/packagesupdateinfo" element={<PackagesUpdateInfo />} />
           <Route path="/choose-voucher" element={<ChooseVoucher />} />
           <Route path="/voucher-use-info" element={<VoucherUseInfo />} />
           <Route path="/subs-register" element={<SubsRegister />} />

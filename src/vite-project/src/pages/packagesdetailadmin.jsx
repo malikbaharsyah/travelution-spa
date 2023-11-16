@@ -32,7 +32,7 @@ function PackagesDetail() {
                   </div>
               </div>
               <div class="flex space-x-4 mt-44">
-                  <Link to="/package-update-info" className=" bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded text-center">
+                  <Link to="/packagesupdateinfo" className=" bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded text-center">
                         Update
                   </Link>
                   <button class="voucher-detail-button bg-red-500 hover:bg-red-400 text-white font-bold py-2 px-4 border-b-4 border-red-700 hover:border-red-500 rounded" onClick={GunakanButton}>
