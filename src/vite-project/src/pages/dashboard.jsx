@@ -6,7 +6,7 @@ import NavbarUser from '../components/NavbarUser.jsx'
   function Dashboard() {
     return (
       <>
-        <NavbarAdmin/>
+        <NavbarUser/>
         <div className="landingpage">
           <img src={DashboardImage} id='landingimage' alt="landingimage" className="w-full" />
           <div className="titletext absolute top-72 w-full text-center">

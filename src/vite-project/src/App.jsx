@@ -21,6 +21,7 @@ import PackagesUpdateInfo from './pages/packagesupdateinfo.jsx';
 import ChooseVoucher from './pages/choosevoucher.jsx';
 import VoucherUseInfo from './pages/voucheruseinfo.jsx';
 import SubsRegister from './pages/subsregister.jsx';
+import SubsDone from './pages/subsdone.jsx';
 
 function App() {
   const [isOpen, setIsOpen] = useState(false);
@@ -49,6 +50,7 @@ function App() {
           <Route path="/choose-voucher" element={<ChooseVoucher />} />
           <Route path="/voucher-use-info" element={<VoucherUseInfo />} />
           <Route path="/subs-register" element={<SubsRegister />} />
+          <Route path="/subs-done" element={<SubsDone />} />
         </Routes>
       </Router>
     </>

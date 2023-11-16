@@ -11,17 +11,17 @@ function Login() {
         const username = document.getElementById('username').value;
         const password = document.getElementById('password').value;
 
-        const isValidCredentials = accountdummy.some(
+        const user = accountdummy.find(
             (cred) => cred.username === username && cred.password === password
-        );
-
-        if (isValidCredentials) {
-            setLoggedInUser(username);
-            navigate('/dashboard');
-        } else {
+          );
+      
+          if (user) {
+            setLoggedInUser(user);
+            navigate('/dashboard', { state: { role: user.role } });
+          } else {
             window.alert('Username or password tidak tepat, silahkan coba lagi');
-        }
-    };
+          }
+        };
 
     return (
         <>
