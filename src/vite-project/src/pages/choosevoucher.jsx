@@ -1,6 +1,6 @@
 import React from "react";
 import voucher from '../img/voucher.png'
-import NavbarAdmin from '../components/NavbarAdmin.jsx'
+import NavbarUser from '../components/NavbarUser.jsx'
 import { Link, useNavigate } from 'react-router-dom';
 
 const DataDummy = [
@@ -41,7 +41,7 @@ function ChooseVoucher() {
 
     return (
     <>
-      <NavbarAdmin/>
+      <NavbarUser/>
       <h1 class="top-2 font-sans text-4xl font-bold py-10 ml-10">
 		  Pilih Voucher yang ingin digunakan:
       </h1>
