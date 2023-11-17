@@ -2,7 +2,7 @@ import React, {useRef, useEffect, useState} from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import NavbarAdminlogo from '../img/logo2.png'
 
-function NavbarAdmin({username}) {
+function NavbarAdmin() {
   const navigate = useNavigate();
   const [isOpen, setIsOpen] = useState(false);
 
@@ -20,6 +20,8 @@ function NavbarAdmin({username}) {
       navigate('/')
     }
   };
+
+  const username = localStorage.getItem('username');
 
   return (
     <nav className="bg-blue-400 p-4">
@@ -60,7 +62,7 @@ function NavbarAdmin({username}) {
             <Link to="/packagesinfo" className="text-black">Packages</Link>
             <Link to="/voucheredit" className="text-black">Voucher</Link>
             <div onClick={toggleDropdown} className="relative inline-block text-left text-black focus:outline-none hover:text-indigo-500">
-                        Jason
+                        {username}
                     <div
                         className={`${
                             isDropdownOpen ? 'block' : 'hidden'
