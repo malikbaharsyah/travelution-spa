@@ -1,8 +1,12 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import NavbarAdmin from '../components/NavbarAdmin.jsx'
 import { Link, useNavigate } from 'react-router-dom';
+import axios from '../components/axiosConfig.jsx'
+import { useParams } from 'react-router-dom';
 
 function PackagesDetail() {
+    const { id } = useParams();
+    const [packageData, setPackageData] = useState(null);
     const navigate = useNavigate();
     const DeleteButton = () => {
         const confirmation = window.confirm('Yakin mau hapus packages?');
@@ -14,22 +18,41 @@ function PackagesDetail() {
         }
     };
 
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const response = await axios.get(`/package/${id}`, {
+                    headers: {
+                        'Authorization': `${localStorage.getItem('token')}`
+                    }
+                });
+                const data = response.data.data;
+                setPackageData(data);
+            } catch (error) {
+                console.error('Error fetching data:', error);
+            }
+        };
+    
+        fetchData();
+
+    }, [id]);
+    
+
     return (
     <>
         <NavbarAdmin/>
         <div class="bg-white rounded-xl max-w-screen-2xl p-10 mt-40 mx-40">
         <h1 class="font-sans text-5xl font-bold text-black mb-3">
-            Package A
+            {packageData?.PackageName}
         </h1>
           <div class="flex justify-between items-center">
               <div class="flex items-center">
                   <div>
-                      <h2 class="text-black text-2xl font-bold">Bali</h2>
-                      <h3 class="text-black text-xl pt-2 mb-8">Pantai Kuta - Tanah Lot - Garuda Wisnu Kencana - Pantai Pandawa - Nusa Penida - Pantai Sanur - 
-                      <br></br>Tanjung Benoa</h3>
-                      <h3 class="text-black text-sl pt-1">Nikmati liburan di Bali dengan harga terjangkau!</h3>
-                      <h3 class="text-black text-sl pt-1">11 November 2023 - 13 November 2023</h3>
-                      <h3 class="text-black text-sl pt-1 font-bold">Rp3.200.000</h3>
+                      <h2 class="text-black text-2xl font-bold">{packageData?.City}</h2>
+                      <h3 class="text-black text-xl pt-2 mb-8">{packageData?.PackageRoute}</h3>
+                      <h3 class="text-black text-sl pt-1">{packageData?.PackageDesc}</h3>
+                      <h3 class="text-black text-sl pt-1">{packageData?.PackageStartDate} - {packageData?.PackageEndDate}</h3>
+                      <h3 class="text-black text-sl pt-1 font-bold">Rp{packageData?.Price}</h3>
                   </div>
               </div>
               <div class="flex space-x-4 mt-44">

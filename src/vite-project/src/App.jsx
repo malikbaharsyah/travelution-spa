@@ -43,7 +43,7 @@ function App() {
           <Route path="/voucherdetail" element={<VoucherDetail />} />
           <Route path="/voucherdetailinfo" element={<VoucherDetailInfo />} />
           <Route path="/packagesdetailconfirm" element={<PackagesDetailConfirm />} />
-          <Route path="/packagesdetailinfo" element={<PackagesDetailInfo />} />
+          <Route path="/packagesdetailinfo/:id" element={<PackagesDetailInfo />} />
           <Route path="/packagesinfofill" element={<PackagesInfoFill />} />
           <Route path="/voucherinfofill" element={<VoucherInfoFill />} />
           <Route path="/packagesupdateinfo" element={<PackagesUpdateInfo />} />
