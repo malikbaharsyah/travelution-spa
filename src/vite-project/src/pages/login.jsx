@@ -1,30 +1,66 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from 'react-router-dom';
 import accountdummy from './accountdummy';
 import NavbarAdmin from '../components/NavbarAdmin.jsx';
+import axios from '../components/axiosConfig';
+import { isTokenAvailable } from "../components/tokenConfig.jsx";
 
 function Login() {
     const navigate = useNavigate();
     const [loggedInUser, setLoggedInUser] = useState(null);
 
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                if (isTokenAvailable()) {
+                    const token = localStorage.getItem('token');
+                    const response = await axios.get('/profile', { headers: { authorization: `${token}` } });
+    
+                    if (response.status === 200) {
+                        const role = response.data.role;
+                        setLoggedInUser({ username: response.data.username });
+                        navigate('/dashboard', { state: { role: role } });
+                    } else {
+                        console.error('Error fetching profile data:', response.statusText);
+                    }
+                }
+            } catch (error) {
+                console.error('Error fetching data:', error);
+            }
+        };
+    
+        fetchData();
+    }, [navigate]);
+    
+
     const SubmitButton = () => {
         const username = document.getElementById('username').value;
         const password = document.getElementById('password').value;
 
-        console.log('Username:', username);
-        console.log('Password:', password);
+        const requestLogin = async () => {
+            try {
+              const response = await axios.post('/login', { username, password });
+              const data = response.data;
+              if (response.status === 200) {
+                localStorage.setItem('token', data.accessToken);
+                const token = localStorage.getItem('token');
+                const profile = await axios.get('/profile', { headers: { authorization: `${token}` } });
+                const role = profile.data.role;
+                setLoggedInUser({ username });
+                console.log(role);
+                navigate('/dashboard');
+              } else if (response.status === 401) {
+                window.alert('Username or password tidak tepat, silahkan coba lagi');
+              } else {
+                window.alert('Kesalahan server, silahkan coba lagi');
+              }
+            } catch (error) {
+              console.error('Error fetching data:', error);
+            }
+          };
 
-        const user = accountdummy.find(
-            (cred) => cred.username === username && cred.password === password
-          );
-      
-          if (user) {
-            setLoggedInUser(user);
-            console.log('Berhasil login!');
-            navigate('/dashboard', { state: { role: user.role } });
-          } else {
-            window.alert('Username or password tidak tepat, silahkan coba lagi');
-          }
+        requestLogin();
+
         };
 
     return (

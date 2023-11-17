@@ -16,6 +16,7 @@ function NavbarAdmin({username}) {
     const confirmation = window.confirm('Yakin mau logout?');
 
     if (confirmation) {
+      localStorage.removeItem('token');
       navigate('/')
     }
   };

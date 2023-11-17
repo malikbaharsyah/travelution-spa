@@ -1,10 +1,11 @@
 import React from "react";
 import NavbarAdmin from '../components/NavbarAdmin.jsx'
 import { Link, useNavigate } from 'react-router-dom';
+import axios from '../components/axiosConfig.jsx'
 
 function PackagesInfoFill() {
     const navigate = useNavigate();
-    const SubmitButton = () => {
+    const SubmitButton = async () => {
         const namaPackage = document.getElementById('namaPackage').value;
         const kota = document.getElementById('kota').value;
         const rute = document.getElementById('rute').value;
@@ -29,11 +30,34 @@ function PackagesInfoFill() {
             console.log('Kota:', kota);
             console.log('Rute:', rute);
             console.log('Deskripsi:', deskripsi);
-            console.log('Waktu Mulai:', waktuMulai);
-            console.log('Waktu Selesai:', waktuSelesai);
+            console.log('Waktu Mulai:', `${waktuMulai}T00:00:00Z`);
+            console.log('Waktu Selesai:', `${waktuSelesai}T00:00:00Z`);
             console.log('Harga:', harga);
             console.log('Berhasil membuat package baru yaitu', namaPackage, '!');
-            window.alert('Package Perjalanan Berhasil dibuat!');
+            // window.alert('Package Perjalanan Berhasil dibuat!');
+            try {
+                // post using header
+                const response = await axios.post('/package', { 
+                    PackageName: namaPackage,
+                    PackageDesc: deskripsi,
+                    PackageRoute: rute,
+                    PackageStartDate: `${waktuMulai}T00:00:00Z`,
+                    PackageEndDate: `${waktuSelesai}T00:00:00Z`,
+                    PackageCity: kota,
+                    PackagePrice: Number(harga)
+                }, {
+                    headers: {
+                        'Authorization': `${localStorage.getItem('token')}`
+                    }
+                });
+                if (response.status === 200) {
+                    window.alert('Berhasil membuat package baru yaitu', namaPackage, '!');
+                } else {
+                    window.alert('Kesalahan server, silahkan coba lagi');
+                }
+            } catch (error) {
+
+            }
             navigate('/packagesinfo');
         }
     };
