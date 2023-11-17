@@ -28,14 +28,22 @@ const DataDummy = [
 ];   
 
 const VoucherPage = () => {
-    const GunakanButton = (index) => {
-        const confirmation = window.confirm('Yakin mau menghapus voucher?');
-
-        if (confirmation) {
-            const deleteVoucher = DataDummy[index];
-            console.log(`${deleteVoucher.name} berhasil dihapus!`);
-            window.alert('Voucher berhasil dihapus!');
-        }
+    const GunakanButton = (id) => {
+        const fetchData = async () => {
+            try {
+                const response = await axios.delete(`/voucher/${id}`, {
+                    headers: {
+                        'Authorization': `${localStorage.getItem('token')}`
+                    }
+                });
+                const data = response.data.data;
+                setPackageData(data);
+                window.alert('voucher berhasil dihapus!');
+            } catch (error) {
+                window.alert(error);
+            }
+        };
+        fetchData();
     };
 
     const [voucherData, setVoucherData] = useState([]);
@@ -77,7 +85,7 @@ const VoucherPage = () => {
                             Detail
                         </button>
                         </Link>
-                        <button class="voucher-detail-button bg-red-500 hover:bg-red-400 text-white font-bold py-2 px-4 border-b-4 border-red-700 hover:border-red-500 rounded" onClick={() => GunakanButton(index)}>
+                        <button class="voucher-detail-button bg-red-500 hover:bg-red-400 text-white font-bold py-2 px-4 border-b-4 border-red-700 hover:border-red-500 rounded" onClick={() => GunakanButton(item.VoucherID)}>
                             Delete
                         </button>
                     </div>
