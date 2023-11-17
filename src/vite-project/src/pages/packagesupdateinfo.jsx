@@ -1,8 +1,10 @@
 import React from "react";
 import NavbarAdmin from '../components/NavbarAdmin.jsx'
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate, useParams } from 'react-router-dom';
+import axios from '../components/axiosConfig.jsx'
 
 function PackagesUpdateFill() {
+    const {id} = useParams();
     const navigate = useNavigate();
     const SubmitButton = () => {
         const namaPackage = document.getElementById('namaPackage').value;
