@@ -8,12 +8,12 @@ import NavBar from '../components/Navbar';
 
   function Dashboard() {
     const location = useLocation();
-    const role = location.state && location.state.role;
-    console.log(role);
+    const role = "user"
 
     return (
       <>
-        <NavbarAdmin/>
+        {/* Condition based on role */}
+        {role === "admin" ? <NavbarAdmin /> : <NavbarUser />}
         <div className="landingpage">
           <img src={DashboardImage} id='landingimage' alt="landingimage" className="w-full" />
           <div className="titletext absolute top-72 w-full text-center">
