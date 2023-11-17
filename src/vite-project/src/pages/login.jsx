@@ -18,6 +18,7 @@ function Login() {
     
                     if (response.status === 200) {
                         const role = response.data.role;
+                        console.log(role);
                         setLoggedInUser({ username: response.data.username });
                         navigate('/dashboard', { state: { role: role } });
                     } else {
