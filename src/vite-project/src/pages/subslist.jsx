@@ -30,34 +30,6 @@ const DataDummy = [
         "start": "2021-01-01",
         "end": "2021-12-31"
     },
-    {
-        "username": "user1",
-        "firstName": "John",
-        "lastName": "Doe",
-        "start": "2021-01-01",
-        "end": "2021-12-31"
-    },
-    {
-        "username": "user1",
-        "firstName": "John",
-        "lastName": "Doe",
-        "start": "2021-01-01",
-        "end": "2021-12-31"
-    },
-    {
-        "username": "user1",
-        "firstName": "John",
-        "lastName": "Doe",
-        "start": "2021-01-01",
-        "end": "2021-12-31"
-    },
-    {
-        "username": "user1",
-        "firstName": "John",
-        "lastName": "Doe",
-        "start": "2021-01-01",
-        "end": "2021-12-31"
-    },
 ]
 
 

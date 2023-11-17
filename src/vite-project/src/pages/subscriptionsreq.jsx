@@ -3,19 +3,19 @@ import NavbarAdmin from '../components/NavbarAdmin.jsx'
 
 const DataDummy = [
     {
-        "username": "user1",
-        "firstName": "John",
-        "lastName": "Doe",
+        "username": "bintang",
+        "firstName": "Bintang",
+        "lastName": "Hijriawan",
     },
     {
-        "username": "user2",
-        "firstName": "Johns",
-        "lastName": "Does",
+        "username": "jason",
+        "firstName": "Jason",
+        "lastName": "Rivalino",
     },
     {
-        "username": "user3",
-        "firstName": "Johny",
-        "lastName": "Doez",
+        "username": "malik",
+        "firstName": "Malik",
+        "lastName": "Baharsyah",
     },
 ]
 
