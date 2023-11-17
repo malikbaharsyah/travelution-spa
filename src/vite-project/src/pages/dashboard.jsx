@@ -8,7 +8,7 @@ import NavBar from '../components/Navbar';
 
   function Dashboard() {
     const location = useLocation();
-    const role = "user"
+    const role = "admin"
 
     return (
       <>
