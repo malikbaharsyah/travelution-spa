@@ -1,4 +1,5 @@
 import React from "react";
+import { useLocation } from 'react-router-dom';
 import DashboardImage from "../img/seablue.jpg";
 import NavbarAdmin from '../components/NavbarAdmin.jsx'
 import NavbarUser from '../components/NavbarUser.jsx'
@@ -6,9 +7,13 @@ import axios from '../components/axiosConfig'
 import NavBar from '../components/Navbar';
 
   function Dashboard() {
+    const location = useLocation();
+    const role = "user"
+
     return (
       <>
-        <NavbarUser/>
+        {/* Condition based on role */}
+        {role === "admin" ? <NavbarAdmin /> : <NavbarUser />}
         <div className="landingpage">
           <img src={DashboardImage} id='landingimage' alt="landingimage" className="w-full" />
           <div className="titletext absolute top-72 w-full text-center">

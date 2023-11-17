@@ -25,7 +25,7 @@ function VoucherInfoFill() {
     return (
         <>
             <NavbarAdmin/>
-            <div className="flex justify-center text-black mt-14">
+            <div className="flex justify-center text-black">
                 <div className="p-6 rounded-lg shadow-md bg-gray-100 w-1/3 mb-20 mt-10">
                     <h1 className="font-sans text-4xl font-bold pt-5 mb-10 text-center">
                         Add New Voucher
@@ -47,6 +47,15 @@ function VoucherInfoFill() {
                                     className="w-full px-4 py-2 border rounded-md bg-blue-200"
                                     rows="4"
                                 ></textarea>
+                            </div>
+                            <div className="w-full px-3 mb-6">
+                                <label className="block text-xl mb-2">Potongan Harga</label>
+                                <input
+                                    id="harga"
+                                    type="number"
+                                    inputMode="numeric"
+                                    className="w-full px-4 py-2 border rounded-md bg-blue-200"
+                                />
                             </div>
                         </div>
                             <button

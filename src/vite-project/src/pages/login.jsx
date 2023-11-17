@@ -9,28 +9,27 @@ function Login() {
     const navigate = useNavigate();
     const [loggedInUser, setLoggedInUser] = useState(null);
 
-    useEffect(() => {
-        const fetchData = async () => {
-            try {
-                if (isTokenAvailable()) {
-                    const token = localStorage.getItem('token');
-                    const response = await axios.get('/profile', { headers: { authorization: `${token}` } });
-    
-                    if (response.status === 200) {
-                        const role = response.data.role;
-                        setLoggedInUser({ username: response.data.username });
-                        navigate('/dashboard', { state: { role: role } });
-                    } else {
-                        console.error('Error fetching profile data:', response.statusText);
-                    }
-                }
-            } catch (error) {
-                console.error('Error fetching data:', error);
+    const requestLogin = async () => {
+        try {
+            const response = await axios.post('/login', { username, password });
+            const data = response.data;
+            if (response.status === 200) {
+                localStorage.setItem('token', data.accessToken);
+                const token = localStorage.getItem('token');
+                const profile = await axios.get('/profile', { headers: { authorization: `${token}` } });
+                const role = profile.data.role;
+                setLoggedInUser({ username });
+                console.log(role);
+                navigate('/dashboard', { state: { role: role } });
+            } else if (response.status === 401) {
+                window.alert('Username or password tidak tepat, silahkan coba lagi');
+            } else {
+                window.alert('Kesalahan server, silahkan coba lagi');
             }
-        };
-    
-        fetchData();
-    }, [navigate]);
+        } catch (error) {
+            console.error('Error fetching data:', error);
+        }
+    };
     
 
     const SubmitButton = () => {
