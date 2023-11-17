@@ -1,11 +1,11 @@
 import React from "react";
-import NavbarAdmin from '../components/NavbarAdmin.jsx'
+import NavbarUser from '../components/NavbarUser.jsx'
 import { Link, useNavigate } from 'react-router-dom';
 
 function VoucherDetail() {
     return (
     <>
-        <NavbarAdmin/>
+        <NavbarUser/>
         <div class="bg-white rounded-xl max-w-screen-2xl p-10 my-44 mx-40">
         <h1 class="font-sans text-5xl font-bold text-black mb-10">
             Voucher A

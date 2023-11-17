@@ -5,12 +5,11 @@ import NavbarUser from '../components/NavbarUser.jsx'
 import axios from '../components/axiosConfig'
 import NavBar from '../components/Navbar';
 
-function Dashboard({ role }) {
-
-  return (
-    <>
-      <NavbarAdmin/>
-      <div className="landingpage">
+  function Dashboard() {
+    return (
+      <>
+        <NavbarUser/>
+        <div className="landingpage">
           <img src={DashboardImage} id='landingimage' alt="landingimage" className="w-full" />
           <div className="titletext absolute top-72 w-full text-center">
             <h1 className="text-5xl md:text-9xl mb-10">TRAVELUTION</h1>
