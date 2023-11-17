@@ -14,7 +14,7 @@ function PackagesPageAdmin() {
             }
         })
             .then(response => {
-                setPackagesData(response.data);
+                setPackagesData(response.data.data);
                 console.log(response.data);
             })
             .catch(error => {
@@ -34,12 +34,12 @@ function PackagesPageAdmin() {
                         <div className="flex items-center">
                             <img src={packages} alt="packages" className="w-16 h-16 ml-5 mr-7"/>
                             <div className="ml-4">
-                                <h2 className="text-black text-3xl">{item.title}</h2>
-                                <h3 className="text-black text-xl pt-4">{item.loc}</h3>
+                                <h2 className="text-black text-3xl">{item.PackageName}</h2>
+                                <h3 className="text-black text-xl pt-4">{item.PackageRoute}</h3>
                             </div>
                         </div>
                         <div className="flex space-x-4">
-                            <Link to={`/packagesdetailinfo/${item.id}`}>
+                            <Link to={`/packagesdetailinfo/${item.PackageID}`}>
                                 <button className="voucher-detail-button bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded">
                                     Detail
                                 </button>
