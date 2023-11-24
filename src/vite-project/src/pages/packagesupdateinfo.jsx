@@ -1,10 +1,12 @@
 import React from "react";
 import NavbarAdmin from '../components/NavbarAdmin.jsx'
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate, useParams } from 'react-router-dom';
+import axios from '../components/axiosConfig.jsx'
 
 function PackagesUpdateFill() {
+    const {id} = useParams();
     const navigate = useNavigate();
-    const SubmitButton = () => {
+    const SubmitButton = async () => {
         const namaPackage = document.getElementById('namaPackage').value;
         const kota = document.getElementById('kota').value;
         const rute = document.getElementById('rute').value;
@@ -34,8 +36,29 @@ function PackagesUpdateFill() {
             console.log('Waktu Selesai:', waktuSelesai);
             console.log('Harga:', harga);
             console.log('Berhasil update informasi package!');
-            window.alert('Informasi Package berhasil diperbaharui!');
-            navigate('/packagesdetailinfo');
+            try {
+                const response = await axios.put(`/package/${id}`, { 
+                    PackageName: namaPackage,
+                    PackageDesc: deskripsi,
+                    PackageRoute: rute,
+                    PackageStartDate: `${waktuMulai}T00:00:00Z`,
+                    PackageEndDate: `${waktuSelesai}T00:00:00Z`,
+                    City: kota,
+                    Price: Number(harga)
+                }, {
+                    headers: {
+                        'Authorization': `${localStorage.getItem('token')}`
+                    }
+                });
+                if (response.status === 200) {
+                    window.alert('Informasi Package berhasil diperbaharui!');
+                } else {
+                    window.alert('Kesalahan server, silahkan coba lagi');
+                }
+            } catch (error) {
+                window.alert('Unavailable');
+            }
+            navigate(`/packagesdetailinfo/${id}`);
         }
     };
     return (

@@ -8,11 +8,19 @@ function PackagesDetail() {
     const { id } = useParams();
     const [packageData, setPackageData] = useState(null);
     const navigate = useNavigate();
-    const DeleteButton = () => {
+    const DeleteButton = async () => {
         const confirmation = window.confirm('Yakin mau hapus packages?');
     
         if (confirmation) {
-          console.log('Paket Perjalanan Berhasil dihapus!');
+          try {
+            await axios.delete(`/package/${id}`, {
+              headers: {
+                'Authorization': `${localStorage.getItem('token')}`
+              }
+            });
+          } catch (error) {
+            window.alert('Error deleting package:', error);
+          }
           window.alert('Paket Perjalanan Berhasil dihapus!');
           navigate('/packagesinfo');
         }
@@ -56,7 +64,7 @@ function PackagesDetail() {
                   </div>
               </div>
               <div class="flex space-x-4 mt-44">
-                  <Link to="/packagesupdateinfo" className=" bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded text-center">
+                  <Link to={`/packagesupdateinfo/${id}`} className=" bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded text-center">
                         Update
                   </Link>
                   <button class="voucher-detail-button bg-red-500 hover:bg-red-400 text-white font-bold py-2 px-4 border-b-4 border-red-700 hover:border-red-500 rounded" onClick={DeleteButton}>

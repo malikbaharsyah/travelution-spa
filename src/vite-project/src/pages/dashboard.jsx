@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useLocation } from 'react-router-dom';
 import DashboardImage from "../img/seablue.jpg";
 import NavbarAdmin from '../components/NavbarAdmin.jsx'
@@ -8,12 +8,12 @@ import NavBar from '../components/Navbar';
 
   function Dashboard() {
     const location = useLocation();
-    const role = "user"
-
+    const role = localStorage.getItem('role');
+    console.log(role);
     return (
       <>
         {/* Condition based on role */}
-        {role === "admin" ? <NavbarAdmin /> : <NavbarUser />}
+        {role === "Admin" ? <NavbarAdmin /> : <NavbarUser />}
         <div className="landingpage">
           <img src={DashboardImage} id='landingimage' alt="landingimage" className="w-full" />
           <div className="titletext absolute top-72 w-full text-center">

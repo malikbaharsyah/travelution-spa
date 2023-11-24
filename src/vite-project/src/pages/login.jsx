@@ -8,28 +8,6 @@ import { isTokenAvailable } from "../components/tokenConfig.jsx";
 function Login() {
     const navigate = useNavigate();
     const [loggedInUser, setLoggedInUser] = useState(null);
-
-    const requestLogin = async () => {
-        try {
-            const response = await axios.post('/login', { username, password });
-            const data = response.data;
-            if (response.status === 200) {
-                localStorage.setItem('token', data.accessToken);
-                const token = localStorage.getItem('token');
-                const profile = await axios.get('/profile', { headers: { authorization: `${token}` } });
-                const role = profile.data.role;
-                setLoggedInUser({ username });
-                console.log(role);
-                navigate('/dashboard', { state: { role: role } });
-            } else if (response.status === 401) {
-                window.alert('Username or password tidak tepat, silahkan coba lagi');
-            } else {
-                window.alert('Kesalahan server, silahkan coba lagi');
-            }
-        } catch (error) {
-            console.error('Error fetching data:', error);
-        }
-    };
     
 
     const SubmitButton = () => {
@@ -46,8 +24,9 @@ function Login() {
                 const profile = await axios.get('/profile', { headers: { authorization: `${token}` } });
                 const role = profile.data.role;
                 setLoggedInUser({ username });
-                console.log(role);
-                navigate('/dashboard');
+                localStorage.setItem('role', role);
+                localStorage.setItem('username', username);
+                navigate('/dashboard', { state: { role } });
               } else if (response.status === 401) {
                 window.alert('Username or password tidak tepat, silahkan coba lagi');
               } else {
